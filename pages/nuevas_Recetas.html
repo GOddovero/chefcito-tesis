@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hello World</title>
+  <link href='/style.css' rel='stylesheet'>
+</head>
+
+<body>
+  <div id="contenedor_navbar"></div>
+  <div class="contenedor_Principal">
+    <div class="contenedor_OpcionesRecetas">
+      <div class="ingredientePrincipal">
+        <h2>Ingrediente Principal:</h2>
+        <select class="select_IngredientePrincipal">
+          <option></option>
+          </select>
+          <button class="activar_IngredientePrincipal" onclick="activarIngredientePrincipal()" id="btn_IngredientePrincipal">
+            Activar
+          </button>
+      </div>
+      <div class="seleccionar_Dieta">
+        <h2>Dieta:</h2>
+        <select class="select_Dieta">
+          <option selected>Ninguna</option>
+          <option>Personalizada</option>
+          <option>Vegano</option>
+          <option>Vegetariano</option>
+          <option>Diabetico</option>
+          <option>Celiaco</option>
+        </select>
+      </div>
+    </div>
+    <hr class="divisor_contenedores">
+    <div>
+      <button id="btn_GenerarRecetas" class="btn_GenerarRecetas">Generar Recetas</button>
+    </div>
+    <div class="contenedor_NuevasRecetas" >
+      <div class="tarjeta_NuevaReceta" id = "tarjeta_NuevaReceta_1">
+        <img src="/img/test-r1.jpg" class="img_Recetas">
+        <p>Ensalada Caprese</p>
+        <text>Tomates frescos, mozzarella y albahaca, rociados con aceite de oliva y vinagre balsámico.</text>
+        <button class="btn_seleccionarReceta" id="btn_seleccionarReceta_1">Seleccionar Receta</button>
+      </div>
+      <div class="tarjeta_NuevaReceta" id = "tarjeta_NuevaReceta_2">
+        <img src="/img/test-r2.jpg" class="img_Recetas">
+        <p>Sándwich de Aguacate y Huevo</p>
+        <text>Pan integral tostado con aguacate machacado y un huevo pochado encima.</text>
+        <button class="btn_seleccionarReceta" id="btn_seleccionarReceta_2">Seleccionar Receta</button>
+      </div>
+       <div class="tarjeta_NuevaReceta" id = "tarjeta_NuevaReceta_3">
+        <img src="/img/test-r3.jpg" class="img_Recetas">
+        <p>Pasta al Pesto</p>
+        <text>Pasta al dente mezclada con salsa de pesto, queso parmesano y piñones tostados.</text>
+        <button class="btn_seleccionarReceta" id="btn_seleccionarReceta_3">Seleccionar Receta</button>
+      </div>
+    </div>
+  </div>
+  <script defer type="text/javascript" src="/components/main.js"></script>
+  <script defer type="text/javascript" src="/components/f_Navbar.js"></script>
+  <script defer type="text/javascript" src="/components/api_groq.js"></script>
+</body>
+
+</html>
