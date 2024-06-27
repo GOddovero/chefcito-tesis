@@ -1,0 +1,49 @@
+/* Add styles here */
+@font-face {
+    font-family: "RobotoCondensedItalic";
+    src: url("./font/RobotoCondensed-Italic-VariableFont_wght.ttf");
+    font-family: "RobotoCondensed";
+    src: url("./font/RobotoCondensed-VariableFont_wght.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "RobotoCondensed", sans-serif;
+}
+
+body {
+    margin: 0;
+    background-color: beige;
+}
+
+nav {
+    background-color: rgb(25, 135, 84);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 2rem;
+    padding: 0 1rem;
+}
+
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    font-size: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+nav li:hover {
+    background-color: rgba(9, 240, 132, 0.774);
+}

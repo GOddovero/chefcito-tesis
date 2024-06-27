@@ -1,0 +1,137 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+h2{
+    color:#ffffff
+}
+.contenedor_PrincipalLogin{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: rgb(137, 193, 167);
+    width: 50vw;
+    height: 60vh;
+    box-shadow: 10px 10px 20px #babecc, -5px -5px 20px #ffffff;
+    border-radius: 5%;
+}
+.contenedor_Login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #198754;
+    width: 50%;
+    height: 100%;
+    border-radius: 5% 0 0 5%;
+}
+.contenedor_Registrar{
+    margin-left: 50%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: #198754;
+    width: 50%;
+    height: 100%;
+    border-radius: 0 5% 5% 0;
+}
+.input_Login{
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+}
+.input_Login > input{
+    width: 15rem;
+    height: 2rem;
+    color:rgb(39, 30, 30);
+    background-color: rgb(244, 244, 243);
+    font-size: 1rem;
+    padding: 2%;
+    border:none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+.input_Login > input:focus{
+    outline: none;
+}
+
+.btn_Login{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.btn_IngresarSesion{
+    background-color: rgb(244, 244, 243); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;  
+    margin-top: 10%;
+    height: 3rem;
+    border: none; 
+    color: rgb(39, 30, 30);
+    border-radius: 5px;  
+    cursor: pointer;
+    font-size: 1rem;
+}
+.btn_IngresarSesion:hover{
+    background-color: rgb(203, 248, 209); 
+}
+.btn_HabilitarRegistrar{
+    margin-top: 10%;
+    background-color: transparent;
+    border: none;
+    color: rgb(244, 244, 243);
+    font-size: 1rem;
+}
+.btn_HabilitarRegistrar:hover{
+    color: rgb(203, 248, 209);
+}
+.input_Registrar{
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 7.5px;
+}
+.input_Registrar > input{
+    width: 15rem;
+    height: 1.8rem;
+    color:rgb(39, 30, 30);
+    background-color: rgb(244, 244, 243);
+    font-size: 1rem;
+    padding: 2%;
+    border:none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+.input_Registrar > input:focus{
+    outline: none;
+}
+.btn_Registrar{
+    background-color: rgb(244, 244, 243); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;  
+    margin-top: 3%;
+    height: 3rem;
+    border: none; 
+    color: rgb(39, 30, 30);
+    border-radius: 5px;  
+    cursor: pointer;
+    font-size: 1rem;
+}
+.btn_Registrar:hover{
+    background-color: rgb(203, 248, 209); 
+}
+.btn_HabilitarLogin{
+    margin-top: 3%;
+    background-color: transparent;
+    border: none;
+    color: rgb(244, 244, 243);
+    font-size: 1rem;
+}
+.btn_HabilitarLogin:hover{
+    color: rgb(203, 248, 209);
+}

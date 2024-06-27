@@ -1,0 +1,40 @@
+.nav_Index{
+    background: transparent;
+    backdrop-filter: blur(10px);
+    height: 70px;
+}
+nav li:hover {
+    background-color: rgba(9, 240, 132, 0.233);
+}
+
+body{
+    background-image: url(../img/fondo.jpg);
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    backdrop-filter: blur(10px);
+}
+.contenedor_Principal{
+    margin-top: 0;
+}
+.contenedor_Titulos{
+    margin-top: 0;
+    color:#146C43;
+    text-align: center;
+    width: 60%;
+    height: 20%;
+    
+}
+.contenedor_Titulos h1{
+    font-size: 150px;
+    margin-bottom: 0;
+}
+.contenedor_Titulos h2{
+    font-size: 40px;
+    margin-top: 0;
+}
+.contenedor_Titulos p{
+    font-size: 20px;
+    margin-top: 0;
+}
