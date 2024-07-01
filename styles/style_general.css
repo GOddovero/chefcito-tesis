@@ -47,3 +47,27 @@ nav a {
 nav li:hover {
     background-color: rgba(9, 240, 132, 0.774);
 }
+
+button {
+    background-color: rgb(244, 244, 243);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-left: 10px;
+    height: 3rem;
+    border: none;
+    color: rgb(39, 30, 30);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button:hover {
+    background-color: rgb(203, 248, 209);
+}
+
+.btn_sinFondo {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    color: rgb(244, 244, 243);
+    font-size: 1rem;
+}
