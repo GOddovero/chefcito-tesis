@@ -1,6 +1,5 @@
 .nav_Index{
     background: rgb(25, 135, 84);
-    backdrop-filter: blur(10px);
     height: 70px;
 }
 nav li:hover {
@@ -59,9 +58,33 @@ nav li:hover {
     font-size: 2rem;
 }
 .segundo_Bloque{
-    margin-top: 25px;
+    margin-top: 10%;
     display: flex;
-    flex-direction: row;
-    width: 75%;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+    text-align: center;
+    background-color: #dfdfc9;
+
+}
+.segundo_Bloque h2{
+    color:#146C43;
+    font-size: 40px;
+}
+.segundo_Bloque p{
+    font-size: x-large;
+    margin-top: 2%;
+    color: #41413a;
+}
+.segundo_Bloque .ultimo_P{
+    margin-bottom: 5%;
+}
+.tercer_Bloque{
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     height: 50%;
+    text-align: center;
+    background-color: #d1d1bc;
 }
