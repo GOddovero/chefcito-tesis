@@ -86,7 +86,7 @@ select{
 .tarjeta_NuevaReceta{
     padding: 0.5rem 1rem;
     width: 20rem;
-    height: 25rem;
+    height: 26rem;
     background-color: rgba(251, 195, 153);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     display: flex;
@@ -102,11 +102,21 @@ select{
     object-fit: cover;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     border-radius: 18px 18px 0 0;
+    margin-bottom: 0;
 }
 .tarjeta_NuevaReceta p,
 .tarjeta_NuevaReceta text {
-    margin: 0; 
     flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tarjeta_NuevaReceta p{
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    font-size: large;
+}
+.tarjeta_NuevaReceta text{
+    margin-top: -2rem;
 }
 .btn_seleccionarReceta{
     margin-left: 10px; 
