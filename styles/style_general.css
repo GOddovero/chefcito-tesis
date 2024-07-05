@@ -24,6 +24,7 @@ nav {
     align-items: stretch;
     gap: 2rem;
     padding: 0 1rem;
+    height: 3rem;
 }
 
 nav ul {

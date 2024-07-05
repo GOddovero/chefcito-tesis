@@ -15,16 +15,46 @@
     <div class="contenedor_OpcionesRecetas">
       <div class="ingredientePrincipal">
         <h2>Ingrediente Principal:</h2>
-        <select class="select_IngredientePrincipal">
-          <option></option>
-          </select>
-          <button class="activar_IngredientePrincipal" onclick="activarIngredientePrincipal()" id="btn_IngredientePrincipal">
-            Activar
-          </button>
+        <select class="select_IngredientePrincipal" id="select_IngredientePrincipal">
+          <option>Pollo</option>
+          <option>Tomates</option>
+          <option>Lechuga</option>
+          <option>Pepino</option>
+          <option>Cebolla</option>
+          <option>Ajo</option>
+          <option>Zanahoria</option>
+          <option>Brócoli</option>
+          <option>Espinacas</option>
+          <option>Frijoles negros</option>
+          <option>Arroz</option>
+          <option>Queso mozzarella</option>
+          <option>Huevos</option>
+          <option>Pan rallado</option>
+          <option>Aceite de oliva</option>
+          <option>Vinagre balsámico</option>
+          <option>Sal</option>
+          <option>Azúcar</option>
+          <option>Café</option>
+          <option>Leche</option>
+          <option>Yogur griego</option>
+          <option>Pepino amargo</option>
+          <option>Champiñones</option>
+          <option>Cebolla roja</option>
+          <option>Pimienta</option>
+          <option>Orégano</option>
+          <option>Albahaca</option>
+          <option>Limón</option>
+          <option>Garbanzos</option>
+          <option>Papas</option>
+        </select>
+        <button class="activar_IngredientePrincipal" onclick="activarIngredientePrincipal()"
+          id="btn_IngredientePrincipal">
+          Activar
+        </button>
       </div>
       <div class="seleccionar_Dieta">
         <h2>Dieta:</h2>
-        <select class="select_Dieta">
+        <select class="select_Dieta" id="select_Dieta">
           <option selected>Ninguna</option>
           <option>Personalizada</option>
           <option>Vegano</option>
@@ -38,23 +68,25 @@
     <div>
       <button id="btn_GenerarRecetas" class="btn_GenerarRecetas" onclick="generarRecetas()">Generar Recetas</button>
     </div>
-    <div class="contenedor_NuevasRecetas" >
-      <div class="tarjeta_NuevaReceta" id = "tarjeta_NuevaReceta_2">
+    <div class="contenedor_NuevasRecetas">
+      <div class="tarjeta_NuevaReceta" id="tarjeta_NuevaReceta_2">
         <img src="/img/test-r2.jpg" class="img_Recetas">
         <p id="nombre_Receta_2">Sándwich de Aguacate y Huevo</p>
         <text id="descripcion_Receta_2">Pan integral tostado con aguacate machacado y un huevo pochado encima.</text>
         <button class="btn_seleccionarReceta" id="btn_seleccionarReceta_2">Seleccionar Receta</button>
       </div>
-       <div class="tarjeta_NuevaReceta" id = "tarjeta_NuevaReceta_3">
+      <div class="tarjeta_NuevaReceta" id="tarjeta_NuevaReceta_3">
         <img src="/img/test-r3.jpg" class="img_Recetas">
         <p id="nombre_Receta_3">Pasta al Pesto</p>
-        <text id="descripcion_Receta_3">Pasta al dente mezclada con salsa de pesto, queso parmesano y piñones tostados.</text>
+        <text id="descripcion_Receta_3">Pasta al dente mezclada con salsa de pesto, queso parmesano y piñones
+          tostados.</text>
         <button class="btn_seleccionarReceta" id="btn_seleccionarReceta_3">Seleccionar Receta</button>
       </div>
-      <div class="tarjeta_NuevaReceta" id = "tarjeta_NuevaReceta_4">
+      <div class="tarjeta_NuevaReceta" id="tarjeta_NuevaReceta_4">
         <img src="/img/test-r3.jpg" class="img_Recetas">
         <p id="nombre_Receta_4">Pasta al Pesto</p>
-        <text id="descripcion_Receta_4">Pasta al dente mezclada con salsa de pesto, queso parmesano y piñones tostados.</text>
+        <text id="descripcion_Receta_4">Pasta al dente mezclada con salsa de pesto, queso parmesano y piñones
+          tostados.</text>
         <button class="btn_seleccionarReceta" id="btn_seleccionarReceta_3">Seleccionar Receta</button>
       </div>
     </div>
