@@ -1,7 +1,11 @@
+.contenedor_Principal{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
 .contenedor_Ultimas_Recetas {
     width: 50%;
     margin: auto;
-    margin-top: 5%;
     overflow: hidden;
  }
  
@@ -20,9 +24,45 @@
     height: 11rem;
     object-fit: cover;
  }
- .botones_UltimasRecetas{
-    margin-left: 40%;
-    margin-top: 5%;
-    margin-bottom: 5%;
- }
  
+ .contenedor_RecetasFavoritas{
+   display: grid;
+   grid-template-columns: repeat(4, auto);
+   justify-content: center;
+   height: 100%;
+   width: 100%;
+   margin: 0 auto;
+   margin-top: 1%;
+   column-gap: 40px;
+   row-gap: 50px;
+   margin-bottom: 5%;
+}
+.img_Recetas{
+   width: 18rem;
+   height: 11rem;
+   object-fit: cover;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+   margin-bottom: 0;
+}
+.tarjeta_RecetasFavoritas{
+   background-color: rgb(208,210,96);
+   padding: 1rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 20rem;
+   border-radius: 8px;
+   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.contenedor_Botones_RecetasFavoritas{
+   margin-top: 5%;
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+}
+text {
+   line-height: 1.5em;
+   min-height: 4.5em;
+   max-height: 4.5em;  
+   overflow: hidden;   
+}

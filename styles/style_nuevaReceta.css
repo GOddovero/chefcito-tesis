@@ -4,7 +4,7 @@
     align-items: center;
 }
 .contenedor_OpcionesRecetas {
-    background-color: beige;
+    background-color: rgb(245, 245, 220);
     display: flex;
     width: 75%;
     height: 7rem;
