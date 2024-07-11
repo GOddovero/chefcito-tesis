@@ -1,0 +1,16 @@
+.galeria_imagenes{
+    width: 285px;
+    aspect-ratio: 1/1;
+    display: flex;
+    gap: 15px;
+    padding: 0 15px;
+    max-width: 1250px;
+
+
+}
+.galeria_imagenes img{
+    margin-top: 10%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
