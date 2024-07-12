@@ -97,6 +97,7 @@ select{
     border-radius: 22px;
 }
 .img_Recetas{
+    background-color: rgb(231, 229, 229);
     width: 18rem;
     height: 11rem;
     object-fit: cover;
@@ -114,6 +115,8 @@ select{
     margin-top: 10px; 
     margin-bottom: 10px;
     font-size: large;
+    text-transform: capitalize;
+    
 }
 .tarjeta_NuevaReceta text{
     margin-top: -2rem;
@@ -139,4 +142,7 @@ select{
     background-color: rgb(241, 228, 219);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
+}
+.activar_GeneracionImagenes{
+    margin-top: 2%;
 }

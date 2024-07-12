@@ -12,6 +12,20 @@ function activarIngredientePrincipal() {
     button.style.backgroundColor = "rgb(244, 244, 243)";
   }
 }
+var generar_Imagen = "No"
+
+function activarGeneracionImagenes(){
+  var btn = document.getElementById("btn_GeneracionImagenes");
+  if (btn.textContent === "Generar Imagenes: SI"){
+    btn.textContent = "Generar Imagenes: NO"
+    generar_Imagen =="Si"
+    btn.style.backgroundColor = "rgb(203, 248, 209)";
+  }else{
+    btn.textContent = "Generar Imagenes: SI"
+    generar_Imagen = "No"
+    btn.style.backgroundColor = "rgb(244, 244, 243)";
+  }
+}
 
 var prompt_Chefcito = "";
 
@@ -77,6 +91,15 @@ async function generarRecetas() {
   } catch (error) {
     console.error('Error generando recetas:', error);
   }
+  var generar_Imagen = "No";
+
+  if (generar_Imagen === "No") {
+    console.log("No se selecciono en las configuraciones generar imagenes.")
+  } else {
+    console.log("Se selecciono en las configuraciones generar imagenes.")
+    console.log("Generando....")
+  }
+
 }
 
 window.generarRecetas = generarRecetas;
