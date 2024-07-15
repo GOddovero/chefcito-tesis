@@ -1,4 +1,4 @@
-import {getIngredietes, showAlerta, guardarIngrediente, borrarIngredientes, editarIngrediente} from "./funciones";
+import {getIngredietes, showAlerta, guardarIngrediente, borrarIngredientes, editarIngrediente} from "./reveer/funciones";
 
 document.addEventListener('DOMContentLoaded', function() {
     getIngredientesData();

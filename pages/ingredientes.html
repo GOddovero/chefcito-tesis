@@ -5,15 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ingredientes</title>
-    <link href='/styles/style_general.css' rel='stylesheet'>
     <link href='/styles/style_ingredientes.css' rel='stylesheet'>
+    <link href='/styles/style_general.css' rel='stylesheet'>
 </head>
 
 <body>
     <div id="contenedor_navbar"></div>
     <div class="contenedor_Principal">
         <div class="botones_ingredientes">
-            <button class="btn_Añadir">
+            <button class="btn_Añadir" id="btn_Añadir">
                 <img class="img_boton" src="/img/icon/icons8-add-50.png">
                 Añadir</button>
             <button class="btn_ticket">
@@ -38,9 +38,12 @@
                     <td>5</td>
                     <td>Unidades</td>
                     <td class="btn_acciones">
-                        <button class="btn_edit"><img class="img_boton_tabla" src="/img/icon/icons8-edit-90.png"></button>
-                        <button class="btn_eliminar"><img class="img_boton_tabla" src="/img/icon/icons8-trash-48.png"></button>
-                        <button class="btn_fav"><img class="img_boton_tabla" src="/img/icon/icons8-star-50.png"></button>
+                        <button class="btn_edit"><img class="img_boton_tabla"
+                                src="/img/icon/icons8-edit-90.png"></button>
+                        <button class="btn_eliminar"><img class="img_boton_tabla"
+                                src="/img/icon/icons8-trash-48.png"></button>
+                        <button class="btn_fav"><img class="img_boton_tabla"
+                                src="/img/icon/icons8-star-50.png"></button>
                     </td>
                 </tr>
                 <tr>
@@ -48,9 +51,12 @@
                     <td>5</td>
                     <td>Unidades</td>
                     <td class="btn_acciones">
-                        <button class="btn_edit"><img class="img_boton_tabla" src="/img/icon/icons8-edit-90.png"></button>
-                        <button class="btn_eliminar"><img class="img_boton_tabla" src="/img/icon/icons8-trash-48.png"></button>
-                        <button class="btn_fav"><img class="img_boton_tabla" src="/img/icon/icons8-star-50.png"></button>
+                        <button class="btn_edit"><img class="img_boton_tabla"
+                                src="/img/icon/icons8-edit-90.png"></button>
+                        <button class="btn_eliminar"><img class="img_boton_tabla"
+                                src="/img/icon/icons8-trash-48.png"></button>
+                        <button class="btn_fav"><img class="img_boton_tabla"
+                                src="/img/icon/icons8-star-50.png"></button>
                     </td>
                 </tr>
                 <tr>
@@ -58,9 +64,12 @@
                     <td>5</td>
                     <td>Unidades</td>
                     <td class="btn_acciones">
-                        <button class="btn_edit"><img class="img_boton_tabla" src="/img/icon/icons8-edit-90.png"></button>
-                        <button class="btn_eliminar"><img class="img_boton_tabla" src="/img/icon/icons8-trash-48.png"></button>
-                        <button class="btn_fav"><img class="img_boton_tabla" src="/img/icon/icons8-star-50.png"></button>
+                        <button class="btn_edit"><img class="img_boton_tabla"
+                                src="/img/icon/icons8-edit-90.png"></button>
+                        <button class="btn_eliminar"><img class="img_boton_tabla"
+                                src="/img/icon/icons8-trash-48.png"></button>
+                        <button class="btn_fav"><img class="img_boton_tabla"
+                                src="/img/icon/icons8-star-50.png"></button>
                     </td>
                 </tr>
                 <tr>
@@ -68,9 +77,12 @@
                     <td>1</td>
                     <td>KG</td>
                     <td class="btn_acciones">
-                        <button class="btn_edit"><img class="img_boton_tabla" src="/img/icon/icons8-edit-90.png"></button>
-                        <button class="btn_eliminar"><img class="img_boton_tabla" src="/img/icon/icons8-trash-48.png"></button>
-                        <button class="btn_fav"><img class="img_boton_tabla" src="/img/icon/icons8-star-50.png"></button>
+                        <button class="btn_edit"><img class="img_boton_tabla"
+                                src="/img/icon/icons8-edit-90.png"></button>
+                        <button class="btn_eliminar"><img class="img_boton_tabla"
+                                src="/img/icon/icons8-trash-48.png"></button>
+                        <button class="btn_fav"><img class="img_boton_tabla"
+                                src="/img/icon/icons8-star-50.png"></button>
                     </td>
                 </tr>
                 <tr>
@@ -78,17 +90,35 @@
                     <td>5</td>
                     <td>Litros</td>
                     <td class="btn_acciones">
-                        <button class="btn_edit"><img class="img_boton_tabla" src="/img/icon/icons8-edit-90.png"></button>
-                        <button class="btn_eliminar"><img class="img_boton_tabla" src="/img/icon/icons8-trash-48.png"></button>
-                        <button class="btn_fav"><img class="img_boton_tabla" src="/img/icon/icons8-star-50.png"></button>
+                        <button class="btn_edit"><img class="img_boton_tabla"
+                                src="/img/icon/icons8-edit-90.png"></button>
+                        <button class="btn_eliminar"><img class="img_boton_tabla"
+                                src="/img/icon/icons8-trash-48.png"></button>
+                        <button class="btn_fav"><img class="img_boton_tabla"
+                                src="/img/icon/icons8-star-50.png"></button>
                     </td>
                 </tr>
             </table>
             <h3>¡No hace falta agregar Agua, Azucar o Sal!</h3>
         </div>
     </div>
+    <div class="modal" id="modal_Ingredientes">
+        <div class="contenido_modal">
+            <h2 id="titulo_modal">Añadir Ingrediente</h2>
+            <div class="input_modal">
+                <input type="text" placeholder="Nombre Ingrediente" id="NOMBRE_INGREDIENTE"> <br>
+                <input type="text" placeholder="Cantidad Ingrediente" id="CANTIDAD_INGREDIENTE"> <br>
+                <input type="text" placeholder="Unidad Ingrediente" id="UNIDAD_INGREDIENTE">
+            </div>
+            <div class="btn_modal">
+                <button class="btn_modal_añadir" id="bnt_modal_añadir"> Añadir</button>
+                <button class="btn_modal_cancelar" id="btn_modal_cancelar"> Cancelar</button>
+            </div>
+        </div>
+    </div>
     <script type="module" src="/components/ingredientes.js"></script>
     <script defer type="text/javascript" src="/components/f_Navbar.js"></script>
+    <script src="/components/modal.js"></script>
 </body>
 
 </html>
