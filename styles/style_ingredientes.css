@@ -1,0 +1,101 @@
+.contenedor_Principal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.img_boton {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.botones_ingredientes {
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+}
+
+.btn_Añadir {
+    width: 35vw;
+    margin-right: 15%;
+    background-color: rgb(24, 135, 84);
+    color: rgb(255, 255, 255);
+}
+
+.btn_ticket {
+    width: 15vw;
+    background-color: rgb(128, 128, 128);
+    color: rgb(255, 255, 255);
+}
+
+.btn_recargar {
+    background-color: rgb(11, 202, 238);
+}
+
+.tabla_ingredientes {
+    margin-top: 25px;
+
+}
+
+table,
+th,
+td {
+    background-color: aliceblue;
+    padding: 25px;
+    text-align: center;
+
+
+}
+table{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5%;
+}
+th{
+    border: 2px solid;
+    border-color: rgb(221, 230, 238);
+    border-radius: 15px 15px 0 0;
+}
+td{
+    border-bottom: 3px solid;
+    border-color: rgb(221, 230, 238);
+}
+
+
+.btn_edit {
+    background-color: rgb(183, 249, 249);
+}
+
+.btn_eliminar {
+    background-color: rgb(254, 109, 109);
+}
+
+.btn_fav {
+    background-color: rgb(255, 255, 139);
+}
+
+.img_boton_tabla {
+    margin-right: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.btn_acciones {
+    margin-top: 5px;
+    width: 175px;
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
+}
+h3{
+    text-align: center;
+}
