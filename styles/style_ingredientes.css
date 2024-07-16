@@ -43,33 +43,40 @@ button {
 }
 
 .tabla_ingredientes {
+    background-color: rgb(240, 248, 255);
+    padding: 1%;
     margin-top: 25px;
-
+    max-height: 450px; 
+    overflow-y: auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-table,
-th,
-td {
-    background-color: aliceblue;
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background-color: rgb(240, 248, 255);
+}
+
+th, td {
     padding: 25px;
     text-align: center;
-
-
-}
-table{
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 5%;
-}
-th{
-    border: 2px solid;
-    border-color: rgb(221, 230, 238);
-    border-radius: 15px 15px 0 0;
-}
-td{
-    border-bottom: 3px solid;
-    border-color: rgb(221, 230, 238);
 }
 
+th {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: aliceblue;
+    border: 2px solid rgb(221, 230, 238);
+    border-radius: 10% 10% 0 0;
+
+}
+
+
+td {
+    border-bottom: 3px solid rgb(221, 230, 238);
+}
 
 .btn_edit {
     background-color: rgb(183, 249, 249);
@@ -96,8 +103,28 @@ td{
     flex-direction: row;
     padding: 5%;
 }
-h3{
+
+h3 {
     text-align: center;
+}
+
+/* Estilos para la barra de desplazamiento */
+.tabla_ingredientes::-webkit-scrollbar {
+    width: 10px;
+}
+
+.tabla_ingredientes::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 5px;
+}
+
+.tabla_ingredientes::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+
+.tabla_ingredientes::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
 
 .modal {
@@ -153,4 +180,7 @@ h3{
 .btn_modal_cancelar:hover{
     background-color: rgb(252, 158, 158);
     color: aliceblue;
+}
+.input_modal{
+    margin-bottom: 5%;
 }

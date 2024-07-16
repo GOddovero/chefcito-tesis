@@ -19,106 +19,48 @@
             <button class="btn_ticket">
                 <img class="img_boton" src="/img/icon/icons8-camera-50.png">
                 Añadir Ticket
-            </button>
-            <button class="btn_recargar">
+            </button>   
+            <button class="btn_recargar" id="btn_recargar">
                 <img class="img_boton" src="/img/icon/icons8-reload-50.png">
                 Recargar
             </button>
         </div>
         <div class="tabla_ingredientes">
             <table>
-                <tr>
-                    <th>NOMBRE</th>
-                    <th>CANTIDAD</th>
-                    <th>UNIDAD</th>
-                    <th>ACCIONES</th>
-                </tr>
-                <tr>
-                    <td>Pollo</td>
-                    <td>5</td>
-                    <td>Unidades</td>
-                    <td class="btn_acciones">
-                        <button class="btn_edit"><img class="img_boton_tabla"
-                                src="/img/icon/icons8-edit-90.png"></button>
-                        <button class="btn_eliminar"><img class="img_boton_tabla"
-                                src="/img/icon/icons8-trash-48.png"></button>
-                        <button class="btn_fav"><img class="img_boton_tabla"
-                                src="/img/icon/icons8-star-50.png"></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Tomate</td>
-                    <td>5</td>
-                    <td>Unidades</td>
-                    <td class="btn_acciones">
-                        <button class="btn_edit"><img class="img_boton_tabla"
-                                src="/img/icon/icons8-edit-90.png"></button>
-                        <button class="btn_eliminar"><img class="img_boton_tabla"
-                                src="/img/icon/icons8-trash-48.png"></button>
-                        <button class="btn_fav"><img class="img_boton_tabla"
-                                src="/img/icon/icons8-star-50.png"></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Lechuga</td>
-                    <td>5</td>
-                    <td>Unidades</td>
-                    <td class="btn_acciones">
-                        <button class="btn_edit"><img class="img_boton_tabla"
-                                src="/img/icon/icons8-edit-90.png"></button>
-                        <button class="btn_eliminar"><img class="img_boton_tabla"
-                                src="/img/icon/icons8-trash-48.png"></button>
-                        <button class="btn_fav"><img class="img_boton_tabla"
-                                src="/img/icon/icons8-star-50.png"></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Pan Rallado</td>
-                    <td>1</td>
-                    <td>KG</td>
-                    <td class="btn_acciones">
-                        <button class="btn_edit"><img class="img_boton_tabla"
-                                src="/img/icon/icons8-edit-90.png"></button>
-                        <button class="btn_eliminar"><img class="img_boton_tabla"
-                                src="/img/icon/icons8-trash-48.png"></button>
-                        <button class="btn_fav"><img class="img_boton_tabla"
-                                src="/img/icon/icons8-star-50.png"></button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Leche</td>
-                    <td>5</td>
-                    <td>Litros</td>
-                    <td class="btn_acciones">
-                        <button class="btn_edit"><img class="img_boton_tabla"
-                                src="/img/icon/icons8-edit-90.png"></button>
-                        <button class="btn_eliminar"><img class="img_boton_tabla"
-                                src="/img/icon/icons8-trash-48.png"></button>
-                        <button class="btn_fav"><img class="img_boton_tabla"
-                                src="/img/icon/icons8-star-50.png"></button>
-                    </td>
-                </tr>
+                <thead>
+                    <tr>
+                        <th>NOMBRE</th>
+                        <th>CANTIDAD</th>
+                        <th>UNIDAD</th>
+                        <th>ACCIONES</th>
+                    </tr>
+                </thead>
+                <tbody id="tabla-body">
+
+                </tbody>
             </table>
-            <h3>¡No hace falta agregar Agua, Azucar o Sal!</h3>
         </div>
+        <h3>¡No hace falta agregar Agua, Azucar o Sal!</h3>
     </div>
     <div class="modal" id="modal_Ingredientes">
         <div class="contenido_modal">
             <h2 id="titulo_modal">Añadir Ingrediente</h2>
+            <hr class="divisor_contenedores">
             <div class="input_modal">
                 <input type="text" placeholder="Nombre Ingrediente" id="NOMBRE_INGREDIENTE"> <br>
                 <input type="text" placeholder="Cantidad Ingrediente" id="CANTIDAD_INGREDIENTE"> <br>
                 <input type="text" placeholder="Unidad Ingrediente" id="UNIDAD_INGREDIENTE">
             </div>
+            <hr class="divisor_contenedores">
             <div class="btn_modal">
                 <button class="btn_modal_añadir" id="bnt_modal_añadir"> Añadir</button>
                 <button class="btn_modal_cancelar" id="btn_modal_cancelar"> Cancelar</button>
             </div>
         </div>
     </div>
-    <script type="module" src="/components/ingredientes.js"></script>
     <script defer type="text/javascript" src="/components/f_Navbar.js"></script>
     <script src="/components/modal.js"></script>
+    <script type="module" src="/components/obtener_ingredientes.js"></script>
 </body>
 
 </html>
