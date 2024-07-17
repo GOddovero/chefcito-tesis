@@ -146,3 +146,82 @@ select{
 .activar_GeneracionImagenes{
     margin-top: 2%;
 }
+.modal {
+    display: block; 
+    position: fixed; 
+    z-index: 1000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    background-color: rgba(0,0,0,0.5); 
+    backdrop-filter: blur(3px);
+}
+.contenido_modal{
+    background-color: #f5f5dc;
+    border-radius: 5px;
+    width: 80vw;
+    height: 80vh;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.55);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contenido_modal_Receta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0px;
+}
+.img_boton_favorita{
+    width: 20px;
+    height: 20px;
+}
+.btn_fav{
+    background-color: rgb(255, 255, 139);
+    padding: 10px;
+}
+.informacion_receta{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25vw;
+    height: 80vh;
+    background-color: rgb(25, 135, 84);
+    padding: 20px;
+    color:aliceblue;
+}
+.nombre_Receta_Seleccionada{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.descripcion_Receta_Seleccionada{
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 1rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.contenido_modal_pasos{
+    width: 55vw;
+    height: 80vh;
+    overflow-y: hidden;
+    display: flex; /* Enable Flexbox layout */
+    flex-direction: column; /* Stack elements vertically */
+}
+.pasos_Receta_Seleccionada{
+    padding: 2%;
+    flex-grow: 1; /* Allow this element to take up available space */
+}
+.botones_modal{
+    background-color: rgb(25, 135, 84);
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+
+}

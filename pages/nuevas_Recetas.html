@@ -16,7 +16,7 @@
       <div class="ingredientePrincipal">
         <h2>Ingrediente Principal:</h2>
         <select class="select_IngredientePrincipal" id="select_IngredientePrincipal">
-        
+
         </select>
         <button class="activar_IngredientePrincipal" onclick="activarIngredientePrincipal()"
           id="btn_IngredientePrincipal">
@@ -61,8 +61,32 @@
         <button class="btn_seleccionarReceta" id="btn_seleccionarReceta_3">Seleccionar Receta</button>
       </div>
     </div>
-    <button class="activar_GeneracionImagenes" onclick="activarGeneracionImagenes()"
-    id="btn_GeneracionImagenes">Generar Imagenes: SI</button>
+    <button class="activar_GeneracionImagenes" onclick="activarGeneracionImagenes()" id="btn_GeneracionImagenes">Generar
+      Imagenes: SI</button>
+  </div>
+  <div class="modal" id="modal_Receta_Seleccionada">
+    <div class="contenido_modal">
+      <div class="contenido_modal_Receta">
+        <div class="informacion_receta">
+        <h2 id="titulo_modal_Receta_Seleccionada">Receta Seleccionada</h2>
+          <img src="/img/defecto_2.png" class="img_Recetas" id="img_Recetas_Seleccionada">
+          <p class="nombre_Receta_Seleccionada" id="nombre_Receta_Seleccionada">Sándwich de Aguacate y Huevo</p>
+          <text class="descripcion_Receta_Seleccionada" id="descripcion_Receta_Seleccionada"> Pan integral tostado con aguacate machacado y un huevo pochado
+            encima.</text>
+            
+        </div>
+        <div class="contenido_modal_pasos">
+          <text class="pasos_Receta_Seleccionada" id="pasos_Receta_Seleccionada">
+            Aqui iran los pasos para realizar la receta seleccionada
+          </text>
+          <div class="botones_modal">
+            <button class="btn_fav" id="btn_fav_modal">Favorito</button>
+            <button class="btn_modal_cancelar" id="btn_modal_cancelar">Cancelar</button>
+            <button class="btn_modal_realizar" id="btn_modal_realizar">Realizada</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <script defer type="text/javascript" src="/components/main.js"></script>
   <script defer type="text/javascript" src="/components/f_Navbar.js"></script>
