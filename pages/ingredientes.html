@@ -49,12 +49,44 @@
             <div class="input_modal">
                 <input type="text" placeholder="Nombre Ingrediente" id="NOMBRE_INGREDIENTE"> <br>
                 <input type="text" placeholder="Cantidad Ingrediente" id="CANTIDAD_INGREDIENTE"> <br>
-                <input type="text" placeholder="Unidad Ingrediente" id="UNIDAD_INGREDIENTE">
+                <select id="UNIDAD_INGREDIENTE">
+                    <option disabled selected>Seleccione la Unidad</option>
+                    <option>Unidad/es</option>
+                    <option>KG</option>
+                    <option>Gramos</option>
+                    <option>Litros</option>
+                    <option>ML</option>
+                </select>
             </div>
             <hr class="divisor_contenedores">
             <div class="btn_modal">
                 <button class="btn_modal_añadir" id="bnt_modal_añadir"> Añadir</button>
                 <button class="btn_modal_cancelar" id="btn_modal_cancelar"> Cancelar</button>
+            </div>
+        </div>
+    </div>
+    <div class="modal" id="modal_ModificarIngrediente">
+        <div class="contenido_modal">
+            <h2 id="titulo_modal_modificar">Modificar Ingrediente</h2>
+            <hr class="divisor_contenedores">
+            <div class="input_modal">
+                <input type="text" placeholder="Nombre Ingrediente" id="NOMBRE_INGREDIENTE_MOD">
+                <br>
+                <input type="text" placeholder="Cantidad Ingrediente" id="CANTIDAD_INGREDIENTE_MOD">
+                <br>
+                <select id="UNIDAD_INGREDIENTE_MOD">
+                    <option disabled selected>Seleccione la Unidad</option>
+                    <option>Unidad/es</option>
+                    <option>KG</option>
+                    <option>Gramos</option>
+                    <option>Litros</option>
+                    <option>ML</option>
+                </select>
+            </div>
+            <hr class="divisor_contenedores">
+            <div class="btn_modal">
+                <button class="btn_modal_actualizar" id="btn_modal_actualizar">Actualizar</button>
+                <button class="btn_modal_cancelar" id="btn_modal_cancelar_modificar">Cancelar</button>
             </div>
         </div>
     </div>

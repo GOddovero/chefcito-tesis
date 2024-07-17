@@ -62,7 +62,6 @@ th, td {
     padding: 25px;
     text-align: center;
 }
-
 th {
     position: sticky;
     top: 0;
@@ -139,7 +138,6 @@ h3 {
     backdrop-filter: blur(3px);
     justify-content: center;
     align-items: center;
-   
 }
 
 .contenido_modal {
@@ -160,6 +158,18 @@ h3 {
     padding: 10px;
     margin-top: 10px;
     font-size: 2vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+}
+select{
+    width: 20vw;
+    height: 5vh;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 2vh;
+    color:rgb(39, 30, 30);
+    background-color: rgb(244, 244, 243);
+    border-color: rgb(244, 244, 243);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
 }
 .btn_modal{
     display: flex;
