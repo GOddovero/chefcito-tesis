@@ -196,3 +196,74 @@ async function generarRecetas() {
 }  
 window.generarRecetas = generarRecetas;
 window.onload = generarRecetas();
+
+function cerrarModal() {
+  document.getElementById("modal_Receta_Seleccionada").style.display = "none";
+  document.getElementById("pasos_Receta_Seleccionada").innerHTML = "";
+}
+async function seleccionarReceta(recetaId) {
+  const recetas = {
+    receta_2: {
+      nombre: document.getElementById("nombre_Receta_2").innerText,
+      descripcion: document.getElementById("descripcion_Receta_2").innerText,
+      imagen: document.getElementById("img_Recetas_2").src,
+    },
+    receta_3: {
+      nombre: document.getElementById("nombre_Receta_3").innerText,
+      descripcion: document.getElementById("descripcion_Receta_3").innerText,
+      imagen: document.getElementById("img_Recetas_3").src,
+    },
+    receta_4: {
+      nombre: document.getElementById("nombre_Receta_4").innerText,
+      descripcion: document.getElementById("descripcion_Receta_4").innerText,
+      imagen: document.getElementById("img_Recetas_4").src,
+    }
+  };
+
+  const receta = recetas[recetaId];
+  if (receta) {
+    // Actualizar el contenido del modal
+    document.getElementById("img_Recetas_Seleccionada").src = receta.imagen;
+    document.getElementById("nombre_Receta_Seleccionada").innerText = receta.nombre;
+    document.getElementById("descripcion_Receta_Seleccionada").innerText = receta.descripcion;
+
+    // Mostrar el modal
+    document.getElementById("modal_Receta_Seleccionada").style.display = "block";
+
+    var pasos_receta = `I need you to generate the steps to make the following recipe. Here is the description of the dish: "${receta.descripcion}" and the name of the dish: "${receta.nombre}". Please be as specific as possible when explaining the steps, including the cooking time. The output should be in HTML format with tags and in Spanish. Keep in mind that I only have the following ingredients to make the recipe: ${listaIngredientes}. Again, the output should be in HTML format with tags and in Spanish so I can paste it into my web page using JavaScript.`;
+
+
+
+    try {
+      const response = await fetch('http://localhost:8000/completions', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ message: pasos_receta })
+      });
+
+      if (!response.ok) {
+        throw new Error('Error en la solicitud al servidor');
+      }
+
+      const data = await response.json();
+      const iaResponse = data.choices[0]?.message?.content || "";
+      
+      // Extraer solo la parte HTML de la respuesta
+      const htmlStartIndex = iaResponse.indexOf('<h2>');
+      const htmlEndIndex = iaResponse.lastIndexOf('</ol>') + 5;
+      const htmlContent = iaResponse.substring(htmlStartIndex, htmlEndIndex);
+
+      // Colocar la respuesta en el div especificado
+      const pasosDiv = document.getElementById("pasos_Receta_Seleccionada");
+      pasosDiv.innerHTML = htmlContent;
+
+    } catch (error) {
+      console.error('Error al consultar la IA:', error);
+      document.getElementById("pasos_Receta_Seleccionada").innerHTML = "Error al obtener los pasos de la receta. Por favor, intenta de nuevo.";
+    }
+  } else {
+    console.error('Receta no encontrada');
+  }
+}

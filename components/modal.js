@@ -1,6 +1,5 @@
 var modal_Añadir = document.getElementById("modal_Ingredientes");
 var modal_Modificar = document.getElementById("modal_ModificarIngrediente");
-
 var btn = document.getElementById("btn_Añadir");
 var cerrar = document.getElementById("btn_modal_cancelar");
 var cerrar_modificar = document.getElementById("btn_modal_cancelar_modificar")

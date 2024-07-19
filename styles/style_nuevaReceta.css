@@ -1,8 +1,9 @@
-.contenedor_Principal{
+.contenedor_Principal {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .contenedor_OpcionesRecetas {
     background-color: rgb(245, 245, 220);
     display: flex;
@@ -31,64 +32,68 @@
 }
 
 .activar_IngredientePrincipal {
-    margin-left: 10px; 
-    padding: 0.5rem 1rem; 
+    margin-left: 10px;
+    padding: 0.5rem 1rem;
     height: 3rem;
-    border: none; 
-    background-color: rgb(244, 244, 243); 
+    border: none;
+    background-color: rgb(244, 244, 243);
     color: rgb(39, 30, 30);
-    border-radius: 5px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     font-size: 1.5rem;
-    white-space: nowrap; 
+    white-space: nowrap;
 }
-  
-  .activar_IngredientePrincipal:hover {
-    background-color: rgb(203, 248, 209); 
-  }
 
-select{
+.activar_IngredientePrincipal:hover {
+    background-color: rgb(203, 248, 209);
+}
+
+select {
     width: 21rem;
     height: 3.5rem;
-    color:rgb(39, 30, 30);
+    color: rgb(39, 30, 30);
     background-color: rgb(244, 244, 243);
     font-size: 1rem;
     padding: 2%;
     border-color: rgb(244, 244, 243);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.select_Dieta{
+
+.select_Dieta {
     width: 15rem;
 }
-.btn_GenerarRecetas{
-    margin-left: 10px; 
+
+.btn_GenerarRecetas {
+    margin-left: 10px;
     padding: 0.5rem 1rem;
-    width: 35rem; 
+    width: 35rem;
     height: 3rem;
-    border: none; 
-    background-color: rgb(117, 183, 152); 
+    border: none;
+    background-color: rgb(117, 183, 152);
     color: rgb(209, 231, 221);
-    border-radius: 5px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     font-size: 1.5rem;
-    white-space: nowrap; 
+    white-space: nowrap;
     margin-bottom: 10%;
 }
-.contenedor_NuevasRecetas{
+
+.contenedor_NuevasRecetas {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     gap: 3rem;
     position: relative;
 }
-.tarjeta_NuevaReceta{
+
+.tarjeta_NuevaReceta {
     padding: 0.5rem 1rem;
     width: 20rem;
     height: 26rem;
     background-color: rgba(251, 195, 153);
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -96,46 +101,53 @@ select{
     position: relative;
     border-radius: 22px;
 }
-.img_Recetas{
+
+.img_Recetas {
     background-color: rgb(231, 229, 229);
     width: 18rem;
     height: 11rem;
     object-fit: cover;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     border-radius: 18px 18px 0 0;
     margin-bottom: 0;
 }
+
 .tarjeta_NuevaReceta p,
 .tarjeta_NuevaReceta text {
     flex-grow: 1;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.tarjeta_NuevaReceta p{
-    margin-top: 10px; 
+
+.tarjeta_NuevaReceta p {
+    margin-top: 10px;
     margin-bottom: 10px;
     font-size: large;
     text-transform: capitalize;
-    
+
 }
-.tarjeta_NuevaReceta text{
+
+.tarjeta_NuevaReceta text {
     margin-top: -2rem;
 }
-.btn_seleccionarReceta{
-    margin-left: 10px; 
-    padding: 0.5rem 1rem; 
+
+.btn_seleccionarReceta {
+    margin-left: 10px;
+    padding: 0.5rem 1rem;
     height: 3rem;
-    border: none; 
-    background-color: rgb(244, 244, 243); 
+    border: none;
+    background-color: rgb(244, 244, 243);
     color: rgb(39, 30, 30);
-    border-radius: 5px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     font-size: 1.5rem;
-    white-space: nowrap; 
-    margin-top: auto; /* Empuja el botón hacia abajo */
+    white-space: nowrap;
+    margin-top: auto;
+    /* Empuja el botón hacia abajo */
 }
-.divisor_contenedores{
+
+.divisor_contenedores {
     border: 0;
     height: 5px;
     width: 100%;
@@ -143,21 +155,24 @@ select{
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin: 20px 0;
 }
-.activar_GeneracionImagenes{
+
+.activar_GeneracionImagenes {
     margin-top: 2%;
 }
+
 .modal {
-    display: block; 
-    position: fixed; 
-    z-index: 1000; 
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%; 
-    height: 100%; 
-    background-color: rgba(0,0,0,0.5); 
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(3px);
 }
-.contenido_modal{
+
+.contenido_modal {
     background-color: #f5f5dc;
     border-radius: 5px;
     width: 80vw;
@@ -174,54 +189,75 @@ select{
     grid-template-columns: 1fr 1fr;
     grid-gap: 0px;
 }
-.img_boton_favorita{
+
+.img_boton_favorita {
     width: 20px;
     height: 20px;
 }
-.btn_fav{
+
+.btn_fav {
     background-color: rgb(255, 255, 139);
     padding: 10px;
 }
-.informacion_receta{
+
+.informacion_receta {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 25vw;
     height: 80vh;
     background-color: rgb(25, 135, 84);
-    padding: 20px;
-    color:aliceblue;
+    padding: 25px;
+    color: aliceblue;
+    overflow-x: hidden;
+    border: none;
 }
-.nombre_Receta_Seleccionada{
-    font-size: 2rem;
+
+.nombre_Receta_Seleccionada {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    word-break: break-word;
+    white-space: normal;
+    }
+
+.descripcion_Receta_Seleccionada {
     text-align: center;
     margin-bottom: 10px;
     margin-top: 10px;
-}
-.descripcion_Receta_Seleccionada{
-    text-align: center;
-    margin-bottom: 10px;
-    margin-top: 10px;
-    font-size: 1rem;
+    font-size: 1.5rem;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.contenido_modal_pasos{
+
+.contenido_modal_pasos {
     width: 55vw;
     height: 80vh;
     overflow-y: hidden;
-    display: flex; /* Enable Flexbox layout */
-    flex-direction: column; /* Stack elements vertically */
+    display: flex;
+    flex-direction: column;
 }
-.pasos_Receta_Seleccionada{
+
+.pasos_Receta_Seleccionada {
     padding: 2%;
-    flex-grow: 1; /* Allow this element to take up available space */
+    flex-grow: 1;
+    overflow-y: scroll;
+    font-size: 1.5rem;
 }
-.botones_modal{
+
+.botones_modal {
     background-color: rgb(25, 135, 84);
     padding: 2%;
     display: flex;
     justify-content: center;
     gap: 10%;
+    border: none;
 
+}
+.titulo_modal_Receta_Seleccionada{
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 15%;
+    margin-top: 15%;
 }

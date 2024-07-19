@@ -5,8 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Chefcito | Nuevas Recetas</title>
-  <link href='/styles/style_general.css' rel='stylesheet'>
   <link href="/styles/style_nuevaReceta.css" rel="stylesheet">
+  <link href='/styles/style_general.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -44,21 +44,24 @@
         <img src="/img/defecto_2.png" class="img_Recetas" id="img_Recetas_2">
         <p id="nombre_Receta_2">Sándwich de Aguacate y Huevo</p>
         <text id="descripcion_Receta_2">Pan integral tostado con aguacate machacado y un huevo pochado encima.</text>
-        <button class="btn_seleccionarReceta" id="btn_seleccionarReceta_2">Seleccionar Receta</button>
+        <button class="btn_seleccionarReceta" id="btn_seleccionarReceta_2"
+          onclick="seleccionarReceta('receta_2')">Seleccionar Receta</button>
       </div>
       <div class="tarjeta_NuevaReceta" id="tarjeta_NuevaReceta_3">
         <img src="/img/defecto_3.png" class="img_Recetas" id="img_Recetas_3">
         <p id="nombre_Receta_3">Pasta al Pesto</p>
         <text id="descripcion_Receta_3">Pasta al dente mezclada con salsa de pesto, queso parmesano y piñones
           tostados.</text>
-        <button class="btn_seleccionarReceta" id="btn_seleccionarReceta_3">Seleccionar Receta</button>
+        <button class="btn_seleccionarReceta" id="btn_seleccionarReceta_3"
+          onclick="seleccionarReceta('receta_3')">Seleccionar Receta</button>
       </div>
       <div class="tarjeta_NuevaReceta" id="tarjeta_NuevaReceta_4">
         <img src="/img/defecto_4.png" class="img_Recetas" id="img_Recetas_4">
         <p id="nombre_Receta_4">Pasta al Pesto</p>
         <text id="descripcion_Receta_4">Pasta al dente mezclada con salsa de pesto, queso parmesano y piñones
           tostados.</text>
-        <button class="btn_seleccionarReceta" id="btn_seleccionarReceta_3">Seleccionar Receta</button>
+        <button class="btn_seleccionarReceta" id="btn_seleccionarReceta_4"
+          onclick="seleccionarReceta('receta_4')">Seleccionar Receta</button>
       </div>
     </div>
     <button class="activar_GeneracionImagenes" onclick="activarGeneracionImagenes()" id="btn_GeneracionImagenes">Generar
@@ -68,20 +71,20 @@
     <div class="contenido_modal">
       <div class="contenido_modal_Receta">
         <div class="informacion_receta">
-        <h2 id="titulo_modal_Receta_Seleccionada">Receta Seleccionada</h2>
+          <h2 id="titulo_modal_Receta_Seleccionada" class="titulo_modal_Receta_Seleccionada">Receta Seleccionada</h2>
           <img src="/img/defecto_2.png" class="img_Recetas" id="img_Recetas_Seleccionada">
           <p class="nombre_Receta_Seleccionada" id="nombre_Receta_Seleccionada">Sándwich de Aguacate y Huevo</p>
-          <text class="descripcion_Receta_Seleccionada" id="descripcion_Receta_Seleccionada"> Pan integral tostado con aguacate machacado y un huevo pochado
+          <text class="descripcion_Receta_Seleccionada" id="descripcion_Receta_Seleccionada"> Pan integral tostado con
+            aguacate machacado y un huevo pochado
             encima.</text>
-            
+
         </div>
         <div class="contenido_modal_pasos">
-          <text class="pasos_Receta_Seleccionada" id="pasos_Receta_Seleccionada">
-            Aqui iran los pasos para realizar la receta seleccionada
-          </text>
+          <div class="pasos_Receta_Seleccionada" id="pasos_Receta_Seleccionada">
+          </div>
           <div class="botones_modal">
             <button class="btn_fav" id="btn_fav_modal">Favorito</button>
-            <button class="btn_modal_cancelar" id="btn_modal_cancelar">Cancelar</button>
+            <button class="btn_modal_cancelar" id="btn_modal_cancelar" onclick="cerrarModal()">Cancelar</button>
             <button class="btn_modal_realizar" id="btn_modal_realizar">Realizada</button>
           </div>
         </div>
@@ -91,6 +94,7 @@
   <script defer type="text/javascript" src="/components/main.js"></script>
   <script defer type="text/javascript" src="/components/f_Navbar.js"></script>
   <script defer type="text/javascript" src="/components/generar_recetas.js"></script>
+
   <script type="module" src="/components/obtener_ingredientes.js"></script>
 </body>
 
