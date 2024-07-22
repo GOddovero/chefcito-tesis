@@ -1,0 +1,50 @@
+<div class="modal_Perfil">
+    <div class="contenido_Modal_Perfil">
+      <div class="tab-menu">
+        <button class="tab-link" onclick="openTab(event, 'contraseña_usuario_Modal_Perfil')">Modificar Contraseña</button>
+        <button class="tab-link" onclick="openTab(event, 'email_usuario_Modal_Perfil')">Modificar Email</button>
+        <button class="tab-link" onclick="openTab(event, 'nombre_usuario_Modal_Perfil')">Modificar Nombre</button>
+        <button class="tab-link" onclick="openTab(event, 'personalizar_Modal_Perfil')">Personalizar Recetas</button>
+      </div>
+      <div class="Opciones_Modal_Perfil">
+        <div id="contraseña_usuario_Modal_Perfil" class="tab-content">
+          <h2>Modificar Contraseña</h2>
+          <h4>Contraseña Actual</h4>
+          <input type="password">
+          <h4>Nueva Contraseña</h4>
+          <input type="password">
+          <h4>Confirmar Contraseña</h4>
+          <input type="password">
+          <button class="cambiar_contraseña_Usuario_Perfil" id="cambiar_contraseña_Usuario_Perfil">Confirmar</button>
+        </div>
+        <div id="email_usuario_Modal_Perfil" class="tab-content" style="display:none;">
+          <h2>Modificar Email</h2>
+          <h4>Email Actual</h4>
+          <input type="text">
+          <h4>Nuevo Email</h4>
+          <input type="text">
+          <h4>Confirmar Email</h4>
+          <input type="text">
+          <button class="cambiar_email_Usuario_Perfil" id="cambiar_email_Usuario_Perfil">Confirmar</button>
+        </div>
+        <div id="nombre_usuario_Modal_Perfil" class="tab-content" style="display:none;">
+          <h2>Modificar Nombre</h2>
+          <h4>Nombre Actual</h4>
+          <input type="text">
+          <h4>Nuevo Nombre</h4>
+          <input type="text">
+          <button class="cambiar_nombre_Usuario_Perfil" id="cambiar_nombre_Usuario_Perfil">Confirmar</button>
+        </div>
+        <div id="personalizar_Modal_Perfil" class="tab-content" style="display:none;">
+          <h2>Personalizar Generacion de Recetas</h2>
+          <h3>Tipo de Dieta Personalizado:</h3>
+          <p>Describe a continuacion tus gustos y/o problemas con alimentos para tenerlos en cuenta en la generacion de recetas, describelo de la mejor manera para no generar problemas. Tambien puedes aprovechar para mencionar si tienes algun tipo de Alergia.</p>
+          <textarea placeholder="No me gusta la mayonesa y soy alergico al pescado..."></textarea>
+          <button class="guardar_Personalizar_Receta"> Guardar </button>
+          <h3>Generar Imagenes</h3>
+          <p>¡Recorda que si activas la generacion de imagenes las recetas tardarán más tiempo en generarse! Si quieres mejor rendimiento en cuanto a tiempo de espera te recomiendo desactivar esta opcion.</p>
+          <button class="activar_GeneracionImagenes" onclick="activarGeneracionImagenes()" id="btn_GeneracionImagenes">Generar Imagenes: SI</button>
+        </div>
+      </div>
+    </div>
+  </div>

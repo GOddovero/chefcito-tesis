@@ -72,3 +72,60 @@ button:hover {
     color: rgb(244, 244, 243);
     font-size: 1rem;
 }
+
+.modal_Perfil {
+    display: block;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: center;
+}
+
+.contenido_Modal_Perfil {
+    margin: auto;
+    background-color: #f5f5dc;
+    padding: 20px;
+    border-radius: 5px;
+    width: 45vw;
+    height: 60vh;
+    overflow-y: scroll;
+    position: relative;
+    text-align: center;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.55);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.tab-menu {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 10px;
+}
+
+.tab-link {
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+}
+
+.tab-link:hover {
+    background-color: #ddd;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}

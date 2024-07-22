@@ -39,7 +39,6 @@ var generar_Imagen = "No"
 function activarGeneracionImagenes() {
   var btn = document.getElementById("btn_GeneracionImagenes");
   if (btn.textContent === "Generar Imagenes: SI") {
-    window.alert("¡Recorda que si activas la generacion de imagenes las recetas tardarán más tiempo en generarse! Si quieres mejor rendimiento en cuanto a tiempo de espera te recomiendo desactivar esta opcion.")
     btn.textContent = "Generar Imagenes: NO"
     generar_Imagen = "Si"
     btn.style.backgroundColor = "rgb(203, 248, 209)";
@@ -230,8 +229,7 @@ async function seleccionarReceta(recetaId) {
     // Mostrar el modal
     document.getElementById("modal_Receta_Seleccionada").style.display = "block";
 
-    var pasos_receta = `I need you to generate the steps to make the following recipe. Here is the description of the dish: "${receta.descripcion}" and the name of the dish: "${receta.nombre}". Please be as specific as possible when explaining the steps, including the cooking time. The output should be in HTML format with tags and in Spanish. Keep in mind that I only have the following ingredients to make the recipe: ${listaIngredientes}. Again, the output should be in HTML format with tags and in Spanish so I can paste it into my web page using JavaScript.`;
-
+    var pasos_receta = "Please generate the following HTML recipe: <h2>{receta.nombre}</h2><ul><li><b>Ingredientes:</b></li><ul>{listaIngredientes}</ul><li><b>Pasos:</b></li><ol>I need you to generate the steps to make the following recipe. Here is the description of the dish: " +receta.descripcion +" and the name of the dish: "+receta.nombre+". The output should be in HTML format with tags and in Spanish. The cooking time should be included. Please keep in mind that I only have the following ingredients to make the recipe: "+ listaIngredientes +". Approximate preparation time: {tiempoPreparacion} minutos. Again, the output should be in HTML format with tags and in Spanish so I can paste it into my web page using JavaScript.</ol></ul>"
 
 
     try {
