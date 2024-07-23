@@ -93,7 +93,7 @@ button:hover {
     padding: 20px;
     border-radius: 5px;
     width: 45vw;
-    height: 60vh;
+    height: auto;
     position: relative;
     text-align: center;
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.55);
@@ -119,13 +119,13 @@ button:hover {
 .tab-link {
     padding: 10px 20px;
     cursor: pointer;
-    background-color: #f1f1f1;
+    background-color: #0f5132;
     border: none;
     outline: none;
 }
 
 .tab-link:hover {
-    background-color: #ddd;
+    background-color: #75b798;
 }
 
 .tab-content {
@@ -137,23 +137,47 @@ button:hover {
 }
 .tab-link{
     width: 100%;
+    height: auto;
     border-radius: 0;
     box-shadow: none;
     margin: 0;
     background-color: rgb(25, 135, 84);
     color: aliceblue;
 }
+.tab-menu{
+    background-color: rgb(25, 135, 84);
+    margin: -10px;
+}
 .contenido_Modal_Perfil input{
     border: none;
     width: 20vw;
     height: 6vh;
     padding: 10px;
-    margin-top: 10px;
     font-size: 2vh;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 15px;
+}
+.contenido_Modal_Perfil h4{
+    margin-bottom: 5px;
+    margin-top: 0;
 }
 
 .Opciones_Modal_Perfil{
     display:flex;
     justify-content: center;
+    background-color: #75b798;
+    margin-right: -10px;
+    margin-left: -10px;
+}
+.Opciones_Modal_Perfil button{
+    margin-bottom: 2%;
+}
+.contenido_Modal_Perfil textarea{
+    border: none;
+    width: 35vw;
+    height: 10vh;
+    padding: 10px;
+    font-size: 2vh;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    margin-bottom: 15px;
 }
