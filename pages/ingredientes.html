@@ -96,6 +96,14 @@
     <script src="/components/modal.js"></script>
     <script type="module" src="/components/obtener_ingredientes.js"></script>
     <script defer type="text/javascript" src="/components/modal_perfil.js"></script>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (!user) {
+                // Si no hay usuario autenticado, redirigir a la página de login
+                window.location.href = 'login.html'; // Ajusta esta ruta según tu estructura
+            }
+        });
+    </script>
 </body>
 
 </html>
