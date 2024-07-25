@@ -2,138 +2,134 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
-h2{
-    color:#ffffff
+
+h2 {
+    color: #ffffff;
+    margin-bottom: 20px;
 }
-.contenedor_PrincipalLogin{
-    margin-top: 10%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background-color: rgb(137, 193, 167);
+
+.contenedor_PrincipalLogin {
+    position: relative;
     width: 50vw;
     height: 60vh;
+    background-color: rgb(137, 193, 167);
     box-shadow: 10px 10px 20px #babecc, -5px -5px 20px #ffffff;
     border-radius: 5%;
+    overflow: hidden;
 }
-.contenedor_Login{
+
+.fondo_movil {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background-color: #198754;
+    transition: transform 0.6s ease-in-out;
+    z-index: 1;
+}
+
+.contenedor_Login, .contenedor_Registrar {
+    position: absolute;
+    width: 50%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
-    background-color: #198754;
-    width: 50%;
-    height: 100%;
-    border-radius: 5% 0 0 5%;
+    justify-content: center;
+    transition: opacity 0.3s ease-in-out 0.3s;
+    z-index: 2;
 }
-.contenedor_Registrar{
-    margin-left: 50%;
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    background-color: #198754;
-    width: 50%;
-    height: 100%;
-    border-radius: 0 5% 5% 0;
+
+.contenedor_Login {
+    left: 0;
+    opacity: 1;
 }
-.input_Login{
-    margin-top: 10%;
+
+.contenedor_Registrar {
+    right: 0;
+    opacity: 0;
+}
+
+.input_Login, .input_Registrar {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 25px;
+    gap: 15px;
+    width: 80%;
 }
-.input_Login > input{
-    width: 15rem;
+
+.input_Login > input, .input_Registrar > input {
+    width: 100%;
     height: 2rem;
-    color:rgb(39, 30, 30);
+    color: rgb(39, 30, 30);
     background-color: rgb(244, 244, 243);
     font-size: 1rem;
     padding: 2%;
-    border:none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-}
-.input_Login > input:focus{
-    outline: none;
-}
-
-.btn_Login{
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-}
-
-.btn_IngresarSesion{
-    background-color: rgb(244, 244, 243); 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-left: 10px;  
-    margin-top: 10%;
-    height: 3rem;
-    border: none; 
-    color: rgb(39, 30, 30);
-    border-radius: 5px;  
-    cursor: pointer;
-    font-size: 1rem;
-}
-.btn_IngresarSesion:hover{
-    background-color: rgb(203, 248, 209); 
-}
-.btn_HabilitarRegistrar{
-    margin-top: 10%;
-    background-color: transparent;
     border: none;
-    color: rgb(244, 244, 243);
-    font-size: 1rem;
-    box-shadow: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.btn_HabilitarRegistrar:hover{
-    color: rgb(203, 248, 209);
+
+.input_Login > input:focus, .input_Registrar > input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.5);
 }
-.input_Registrar{
-    margin-top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 7.5px;
-}
-.input_Registrar > input{
-    width: 15rem;
-    height: 1.8rem;
-    color:rgb(39, 30, 30);
+
+.btn_IngresarSesion, .btn_Registrar {
     background-color: rgb(244, 244, 243);
-    font-size: 1rem;
-    padding: 2%;
-    border:none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-}
-.input_Registrar > input:focus{
-    outline: none;
-}
-.btn_Registrar{
-    background-color: rgb(244, 244, 243); 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-left: 10px;  
-    margin-top: 3%;
+    margin-top: 20px;
     height: 3rem;
-    border: none; 
+    border: none;
     color: rgb(39, 30, 30);
-    border-radius: 5px;  
+    border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
+    padding: 0 20px;
+    transition: background-color 0.3s ease;
 }
-.btn_Registrar:hover{
-    background-color: rgb(203, 248, 209); 
+
+.btn_IngresarSesion:hover, .btn_Registrar:hover {
+    background-color: rgb(203, 248, 209);
 }
-.btn_HabilitarLogin{
-    margin-top: 3%;
+
+.btn_HabilitarRegistrar, .btn_HabilitarLogin {
     background-color: transparent;
     border: none;
     color: rgb(244, 244, 243);
-    font-size: 1rem;
-    box-shadow: none;
+    font-size: 0.9rem;
+    margin-top: 15px;
+    cursor: pointer;
+    transition: color 0.3s ease;
 }
-.btn_HabilitarLogin:hover{
+
+.btn_HabilitarRegistrar:hover, .btn_HabilitarLogin:hover {
     color: rgb(203, 248, 209);
+}
+
+text {
+    color: rgb(244, 244, 243);
+}
+
+.contenedor_PrincipalLogin.mostrar_registro .fondo_movil {
+    transform: translateX(100%);
+}
+
+.contenedor_PrincipalLogin.mostrar_registro .contenedor_Login {
+    opacity: 0;
+    transition-delay: 0s;
+}
+
+.contenedor_PrincipalLogin.mostrar_registro .contenedor_Registrar {
+    opacity: 1;
+    transition-delay: 0.3s;
+}
+
+#error_mensaje {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin-top: 10px;
 }

@@ -72,6 +72,13 @@ button:hover {
     color: rgb(244, 244, 243);
     font-size: 1rem;
 }
+#btn_sinFondo{
+        background-color: transparent;
+        box-shadow: none;
+        border: none;
+        color: rgb(244, 244, 243);
+        font-size: 1rem;
+}
 
 .modal_Perfil {
     display: block;

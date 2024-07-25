@@ -1,27 +1,27 @@
-const contenedorLogin = document.querySelector('.contenedor_Login');
-const contenedorRegistrar = document.querySelector('.contenedor_Registrar');
+const contenedorPrincipal = document.querySelector('.contenedor_PrincipalLogin');
+const btnHabilitarRegistrar = document.querySelector('.btn_HabilitarRegistrar');
+const btnHabilitarLogin = document.querySelector('.btn_HabilitarLogin');
 const btnIngresarSesion = document.querySelector('.btn_IngresarSesion');
 const btnRegistrar = document.querySelector('.btn_Registrar');
 
 // Obtener la instancia de Auth de Firebase
 const auth = firebase.auth();
 
-// Función para mostrar el formulario de registro
-export function habilitarRegistrar() {
-    contenedorLogin.style.display = 'none';
-    contenedorRegistrar.style.display = 'block';
+function habilitarRegistrar() {
+    contenedorPrincipal.classList.add('mostrar_registro');
 }
 
-// Función para mostrar el formulario de login
-export function habilitarLogin() {
-    contenedorRegistrar.style.display = 'none';
-    contenedorLogin.style.display = 'block';
+function habilitarLogin() {
+    contenedorPrincipal.classList.remove('mostrar_registro');
 }
 
+btnHabilitarRegistrar.addEventListener('click', habilitarRegistrar);
+btnHabilitarLogin.addEventListener('click', habilitarLogin);
 // Función para manejar el inicio de sesión
 function iniciarSesion() {
     const email = document.querySelector('.input_Login input[type="text"]').value;
     const password = document.querySelector('.input_Login input[type="password"]').value;
+    const errorMensaje = document.getElementById('error_mensaje');
     
     auth.signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
@@ -34,7 +34,7 @@ function iniciarSesion() {
         })
         .catch((error) => {
             console.error("Error en el inicio de sesión:", error.message);
-            alert("Error en el inicio de sesión: " + error.message);
+            errorMensaje.textContent = "Error en las credenciales, email o contraseña invalido.";
         });
 }
 

@@ -12,14 +12,19 @@
 
 <body>
     <div class="contenedor_PrincipalLogin">
+        <div class="fondo_movil"></div>
         <div class="contenedor_Login">
             <h2>Inicia Sesion</h2>
             <div class="input_Login">
+                <text>Email</text>
                 <input type="text" placeholder="Usuario o Email">
+                <text>Contraseña</text>
                 <input type="password" placeholder="Contraseña">
+                <text id="error_mensaje"></text>
             </div>
+            
             <button class="btn_IngresarSesion">Ingresar</button>
-            <button class="btn_HabilitarRegistrar" onclick="habilitarRegistrar()">¿No tienes cuenta? Registrate</button>
+            <button class="btn_HabilitarRegistrar" id="btn_sinFondo">¿No tienes cuenta? Registrate</button>
         </div>
         <div class="contenedor_Registrar">
             <h2>Registrate</h2>
@@ -31,22 +36,12 @@
                 <input type="password" placeholder="Contraseña">
             </div>
             <button class="btn_Registrar">Registrar</button>
-            <button class="btn_HabilitarLogin" onclick="habilitarLogin()">¿Ya tienes cuenta? Inicia Sesion</button>
+            <button class="btn_HabilitarLogin" id="btn_sinFondo">¿Ya tienes cuenta? Inicia Sesion</button>
         </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyD9AikH55edE0Vp7lBiau-q1XQgxLSZg2s",
-            authDomain: "chefcito-af900.firebaseapp.com",
-            projectId: "chefcito-af900",
-            storageBucket: "chefcito-af900.appspot.com",
-            messagingSenderId: "101121755447",
-            appId: "1:101121755447:web:407209242cf415d3b9b2b2"
-        };
-        firebase.initializeApp(firebaseConfig);
-    </script>
+    <script src="/components/firebase-init.js"></script>
     <script type="module" src="/components/login.js"></script>
 </body>
 

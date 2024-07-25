@@ -158,18 +158,22 @@
       </div>
     </div>
     <div id="modal_Perfil"></div>
-    <script defer type="text/javascript" src="/components/modal_perfil.js"></script>
     <script defer type="text/javascript" src="/components/galeria_ultimasRecetas.js"></script>
     <script defer type="text/javascript" src="/components/f_Navbar.js"></script>
     <script defer type="text/javascript" src="/components/main.js"></script>
+    <!--Auth en firebase-->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="/components/firebase-init.js"></script>
     <script>
       firebase.auth().onAuthStateChanged(function(user) {
           if (!user) {
-              // Si no hay usuario autenticado, redirigir a la página de login
-              window.location.href = 'login.html'; // Ajusta esta ruta según tu estructura
+
+              window.location.href = 'login.html'; 
           }
       });
   </script>
+  <script defer type="text/javascript" src="/components/modal_perfil.js"></script>
 </body>
 
 </html>
