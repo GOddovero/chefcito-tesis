@@ -1,6 +1,7 @@
 //Variables y Listas
 var ingrediente_Principal_Activo = "No";
 const listaIngredientes = JSON.parse(localStorage.getItem('listaIngredientes'));
+const recetasCache = {};
 console.log(listaIngredientes);
 const listaIngredientesFavoritos = JSON.parse(localStorage.getItem('listaIngredientesFavoritos'));
 console.log(listaIngredientesFavoritos);
@@ -34,24 +35,16 @@ function activarIngredientePrincipal() {
     button.style.backgroundColor = "rgb(244, 244, 243)";
   }
 }
-var generar_Imagen = "No"
 
-function activarGeneracionImagenes() {
-  var btn = document.getElementById("btn_GeneracionImagenes");
-  if (btn.textContent === "Generar Imagenes: SI") {
-    btn.textContent = "Generar Imagenes: NO"
-    generar_Imagen = "Si"
-    btn.style.backgroundColor = "rgb(203, 248, 209)";
-  } else {
-    btn.textContent = "Generar Imagenes: SI"
-    generar_Imagen = "No"
-    btn.style.backgroundColor = "rgb(244, 244, 243)";
-  }
-}
 
 var prompt_Chefcito = "";
 
 async function generarRecetas() {
+  for (let receta in recetasCache) {
+    if (recetasCache.hasOwnProperty(receta)) {
+      delete recetasCache[receta];
+    }
+  }
   var select_Dieta = document.getElementById('select_Dieta').value;
   var select_Ingrediente_Principal = document.getElementById('select_IngredientePrincipal').value;
 
@@ -113,7 +106,7 @@ async function generarRecetas() {
         descripcionElement.textContent = descripcionesRecetas[i - 1];
       }
     }
-
+    let generar_Imagen = localStorage.getItem('generar_Imagen') || "No";
     if (generar_Imagen === "Si") {
       generarYActualizarImagenes(descripcionesRecetas);
     } else {
@@ -196,11 +189,15 @@ async function generarRecetas() {
 window.generarRecetas = generarRecetas;
 window.onload = generarRecetas();
 
-function cerrarModal() {
+function cerrarModalRecetas() {
   document.getElementById("modal_Receta_Seleccionada").style.display = "none";
-  document.getElementById("pasos_Receta_Seleccionada").innerHTML = "";
+
 }
+// Objeto para almacenar en caché los pasos de las recetas
+
+
 async function seleccionarReceta(recetaId) {
+  // Objeto que contiene la información de cada receta
   const recetas = {
     receta_2: {
       nombre: document.getElementById("nombre_Receta_2").innerText,
@@ -219,9 +216,10 @@ async function seleccionarReceta(recetaId) {
     }
   };
 
+  // Obtener la receta seleccionada
   const receta = recetas[recetaId];
   if (receta) {
-    // Actualizar el contenido del modal
+    // Actualizar el contenido del modal con la información de la receta
     document.getElementById("img_Recetas_Seleccionada").src = receta.imagen;
     document.getElementById("nombre_Receta_Seleccionada").innerText = receta.nombre;
     document.getElementById("descripcion_Receta_Seleccionada").innerText = receta.descripcion;
@@ -229,10 +227,18 @@ async function seleccionarReceta(recetaId) {
     // Mostrar el modal
     document.getElementById("modal_Receta_Seleccionada").style.display = "block";
 
-    var pasos_receta = "Please generate the following HTML recipe: <h2>{receta.nombre}</h2><ul><li><b>Ingredientes:</b></li><ul>{listaIngredientes}</ul><li><b>Pasos:</b></li><ol>I need you to generate the steps to make the following recipe. Here is the description of the dish: " +receta.descripcion +" and the name of the dish: "+receta.nombre+". The output should be in HTML format with tags and in Spanish. The cooking time should be included. Please keep in mind that I only have the following ingredients to make the recipe: "+ listaIngredientes +". Approximate preparation time: {tiempoPreparacion} minutos. Again, the output should be in HTML format with tags and in Spanish so I can paste it into my web page using JavaScript.</ol></ul>"
+    // Verificar si los pasos ya están en caché
+    if (recetasCache[recetaId]) {
+      // Si están en caché, mostrarlos directamente
+      document.getElementById("pasos_Receta_Seleccionada").innerHTML = recetasCache[recetaId];
+      return;
+    }
 
+    // Preparar el prompt para la IA
+    var pasos_receta = "Please generate the following HTML recipe: <h2>{receta.nombre}</h2><ul><li><b>Ingredientes:</b></li><ul>{listaIngredientes}</ul><li><b>Pasos:</b></li><ol>I need you to generate the steps to make the following recipe. Here is the description of the dish: " + receta.descripcion + " and the name of the dish: " + receta.nombre + ". The output should be in HTML format with tags and in Spanish. The cooking time should be included. Please keep in mind that I only have the following ingredients to make the recipe: " + listaIngredientes + ". Approximate preparation time: {tiempoPreparacion} minutos. Again, the output should be in HTML format with tags and in Spanish so I can paste it into my web page using JavaScript.</ol></ul>"
 
     try {
+      // Hacer la solicitud a la API de Groq
       const response = await fetch('http://localhost:8000/completions', {
         method: 'POST',
         headers: {
@@ -245,6 +251,7 @@ async function seleccionarReceta(recetaId) {
         throw new Error('Error en la solicitud al servidor');
       }
 
+      // Procesar la respuesta
       const data = await response.json();
       const iaResponse = data.choices[0]?.message?.content || "";
       
@@ -253,11 +260,15 @@ async function seleccionarReceta(recetaId) {
       const htmlEndIndex = iaResponse.lastIndexOf('</ol>') + 5;
       const htmlContent = iaResponse.substring(htmlStartIndex, htmlEndIndex);
 
+      // Guardar en caché
+      recetasCache[recetaId] = htmlContent;
+
       // Colocar la respuesta en el div especificado
       const pasosDiv = document.getElementById("pasos_Receta_Seleccionada");
       pasosDiv.innerHTML = htmlContent;
 
     } catch (error) {
+      // Manejar errores
       console.error('Error al consultar la IA:', error);
       document.getElementById("pasos_Receta_Seleccionada").innerHTML = "Error al obtener los pasos de la receta. Por favor, intenta de nuevo.";
     }

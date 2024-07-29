@@ -1,8 +1,11 @@
 const auth = firebase.auth();
 
-document.getElementById('btn_modal_perfil').addEventListener('click', function () {
-  modalPerfil();
+document.body.addEventListener('click', function(event) {
+  if (event.target && event.target.id === 'btn_modal_perfil') {
+      modalPerfil();
+  }
 });
+
 
 function modalPerfil() {
   var modal = document.getElementById('modal_Perfil');
@@ -134,4 +137,38 @@ function cerrarSesion() {
   }).catch((error) => {
     alert("Error al cerrar sesión: " + error.message);
   });
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  if (localStorage.getItem('generar_Imagen') === null) {
+    localStorage.setItem('generar_Imagen', 'No');
+  }
+
+  var generar_Imagen = localStorage.getItem('generar_Imagen');
+  var btn = document.getElementById("btn_GeneracionImagenes");
+
+  if (generar_Imagen === "Si") {
+    btn.textContent = "Generar Imagenes: NO";
+    btn.style.backgroundColor = "rgb(203, 248, 209)";
+  } else {
+    btn.textContent = "Generar Imagenes: SI";
+    btn.style.backgroundColor = "rgb(244, 244, 243)";
+  }
+});
+
+function activarGeneracionImagenes() {
+  var btn = document.getElementById("btn_GeneracionImagenes");
+  var generar_Imagen;
+
+  if (btn.textContent === "Generar Imagenes: SI") {
+    btn.textContent = "Generar Imagenes: DESACTIVAR";
+    generar_Imagen = "Si";
+    btn.style.backgroundColor = "rgb(203, 248, 209)";
+  } else {
+    btn.textContent = "Generar Imagenes: ACTIVAR";
+    generar_Imagen = "No";
+    btn.style.backgroundColor = "rgb(244, 244, 243)";
+  }
+  console.log(generar_Imagen)
+  localStorage.setItem('generar_Imagen', generar_Imagen);
 }

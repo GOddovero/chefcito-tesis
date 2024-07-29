@@ -251,14 +251,16 @@ async function añadirIngrediente() {
     }
 }
 
-// Event listener para abrir el modal de añadir ingrediente
-document.getElementById("bnt_modal_añadir").addEventListener("click", function() {
-    añadirIngrediente();
-});
+document.body.addEventListener('click', function(event) {
+    if (event.target && event.target.id === 'bnt_modal_añadir') {
+      añadirIngrediente();
+    }
+  });
 
-// Event listener para el botón de recargar
-document.getElementById('btn_recargar').addEventListener('click', function () {
-    obtenerDatosYRellenarTabla('ingredientes');
+  document.body.addEventListener('click', function(event) {
+    if (event.target && event.target.id === 'btn_recargar') {
+        obtenerDatosYRellenarTabla('ingredientes');
+    }
 });
 
 // Llamar a la función para rellenar la tabla inicialmente

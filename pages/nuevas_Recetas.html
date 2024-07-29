@@ -82,9 +82,9 @@
           <div class="pasos_Receta_Seleccionada" id="pasos_Receta_Seleccionada">
           </div>
           <div class="botones_modal">
-            <button class="btn_fav" id="btn_fav_modal">Favorito</button>
-            <button class="btn_modal_cancelar" id="btn_modal_cancelar" onclick="cerrarModal()">Cancelar</button>
-            <button class="btn_modal_realizar" id="btn_modal_realizar">Realizada</button>
+            <button class="btn_fav" id="btn_fav_modal" onclick="añadirFavorito(receta_id)">Favorito</button>
+            <button class="btn_modal_cancelar" id="btn_modal_cancelar" onclick="cerrarModalRecetas()">Cancelar</button>
+            <button class="btn_modal_realizar" id="btn_modal_realizar" onclick="recetaRealizada(receta_id)">Realizada</button>
           </div>
         </div>
       </div>
