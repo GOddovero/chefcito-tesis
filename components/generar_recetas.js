@@ -120,72 +120,84 @@ async function generarRecetas() {
     var prompt_por_defecto = "Generate a realistic image of a white plate with highlighted ingredients. The composition should be simple and focus solely on the elements described in the following recipe. Do not add any additional elements to the image:";
     
     var OPENAI_API_KEY = "sk-proj-tKXaXeCaedNutsgbJa2iT3BlbkFJzE8nvjJJLGNQjR64UrfC";
-  
+
     async function generateAiImages(userPrompt) {
-      try {
-        var response = await fetch("https://api.openai.com/v1/images/generations", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Authorization": "Bearer " + OPENAI_API_KEY
-          },
-          body: JSON.stringify({
-            prompt: userPrompt,
-            n: 1,
-            size: "256x256",
-            response_format: "b64_json"
-          })
-        });
-  
-        if (!response.ok) throw new Error("Fallo al generar imágenes");
-  
-        var jsonResponse = await response.json();
-        return jsonResponse.data[0].b64_json;
-      } catch (error) {
-        console.log(error);
-        alert(error.message);
-      }
+        try {
+            var response = await fetch("https://api.openai.com/v1/images/generations", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": "Bearer " + OPENAI_API_KEY
+                },
+                body: JSON.stringify({
+                    prompt: userPrompt,
+                    n: 1,
+                    size: "256x256",
+                    response_format: "b64_json"
+                })
+            });
+
+            if (!response.ok) throw new Error("Fallo al generar imágenes");
+
+            var jsonResponse = await response.json();
+            return jsonResponse.data[0].b64_json;
+        } catch (error) {
+            console.log(error);
+            alert(error.message);
+        }
     }
-  
+
     // Array para almacenar las promesas de generación de imágenes
     const imagePromises = [];
-  
+
+    // Establecer el src de las imágenes a /img/loading.gif antes de comenzar la generación
+    for (let i = 1; i < 4; i++) {
+        const recetaDiv = document.getElementById(`tarjeta_NuevaReceta_${i+1}`);
+        if (recetaDiv) {
+            const imgElement = recetaDiv.querySelector(`#img_Recetas_${i+1}`);
+            if (imgElement) {
+                imgElement.src = "/img/loading.gif"; // Mostrar indicador de carga
+            }
+        }
+    }
+
     // Generar promesas para las 3 recetas
     for (let i = 1; i < 4; i++) {
-      if (!descripcionesRecetas[i]) {
-        console.log("Descripción de receta no definida en el índice:", i);
-        continue; // Saltar si la descripción no está definida
-      }
-  
-      var userPrompt = prompt_por_defecto + descripcionesRecetas[i];
-      console.log("Generando imagen para el prompt:", userPrompt); // Imprimir el prompt por consola
-  
-      // Generar la promesa para la imagen y almacenarla en el array
-      const imagePromise = generateAiImages(userPrompt)
-        .then(imgData => {
-          const recetaDiv = document.getElementById(`tarjeta_NuevaReceta_${i + 1}`);
-          if (recetaDiv && imgData) {
-            const imgElement = recetaDiv.querySelector(`#img_Recetas_${i + 1}`);
-            imgElement.src = "data:image/jpeg;base64," + imgData;
-          }
-        })
-        .catch(error => {
-          console.error('Error generando imagen:', error);
-        });
-  
-      imagePromises.push(imagePromise);
+        if (!descripcionesRecetas[i]) {
+            console.log("Descripción de receta no definida en el índice:", i);
+            continue; // Saltar si la descripción no está definida
+        }
+
+        var userPrompt = prompt_por_defecto + descripcionesRecetas[i];
+        console.log("Generando imagen para el prompt:", userPrompt); // Imprimir el prompt por consola
+
+        // Generar la promesa para la imagen y almacenarla en el array
+        const imagePromise = generateAiImages(userPrompt)
+            .then(imgData => {
+                const recetaDiv = document.getElementById(`tarjeta_NuevaReceta_${i+1}`);
+                if (recetaDiv && imgData) {
+                    const imgElement = recetaDiv.querySelector(`#img_Recetas_${i+1}`);
+                    if (imgElement) {
+                        imgElement.src = "data:image/jpeg;base64," + imgData;
+                    }
+                }
+            })
+            .catch(error => {
+                console.error('Error generando imagen:', error);
+            });
+
+        imagePromises.push(imagePromise);
     }
-  
+
     // Esperar a que se completen todas las promesas
     try {
-      await Promise.all(imagePromises);
-      console.log("Todas las imágenes generadas y actualizadas correctamente.");
+        await Promise.all(imagePromises);
+        console.log("Todas las imágenes generadas y actualizadas correctamente.");
     } catch (error) {
-      console.error('Error al generar imágenes:', error);
+        console.error('Error al generar imágenes:', error);
     }
-  }
-  
-}  
+}
+}
 window.generarRecetas = generarRecetas;
 window.onload = generarRecetas();
 
@@ -219,6 +231,9 @@ async function seleccionarReceta(recetaId) {
   // Obtener la receta seleccionada
   const receta = recetas[recetaId];
   if (receta) {
+    // Cambiar el src de la imagen a un indicador de carga
+    document.getElementById("img_Recetas_4").src = "/img/loading.gif";
+
     // Actualizar el contenido del modal con la información de la receta
     document.getElementById("img_Recetas_Seleccionada").src = receta.imagen;
     document.getElementById("nombre_Receta_Seleccionada").innerText = receta.nombre;
@@ -231,6 +246,9 @@ async function seleccionarReceta(recetaId) {
     if (recetasCache[recetaId]) {
       // Si están en caché, mostrarlos directamente
       document.getElementById("pasos_Receta_Seleccionada").innerHTML = recetasCache[recetaId];
+      
+      // Volver a mostrar la imagen original
+      document.getElementById("img_Recetas_4").src = receta.imagen;
       return;
     }
 
@@ -267,12 +285,44 @@ async function seleccionarReceta(recetaId) {
       const pasosDiv = document.getElementById("pasos_Receta_Seleccionada");
       pasosDiv.innerHTML = htmlContent;
 
+      // Volver a mostrar la imagen original
+      document.getElementById("img_Recetas_4").src = receta.imagen;
+
     } catch (error) {
       // Manejar errores
       console.error('Error al consultar la IA:', error);
       document.getElementById("pasos_Receta_Seleccionada").innerHTML = "Error al obtener los pasos de la receta. Por favor, intenta de nuevo.";
+
+      // Volver a mostrar la imagen original en caso de error
+      document.getElementById("img_Recetas_4").src = receta.imagen;
     }
   } else {
     console.error('Receta no encontrada');
   }
+}
+
+function marcarRecetaComoRealizada() {
+  // Obtener los datos del modal
+  const nombreReceta = document.getElementById('nombre_Receta_Seleccionada').innerText;
+  const descripcionReceta = document.getElementById('descripcion_Receta_Seleccionada').innerText;
+  const imgSrcReceta = document.getElementById('img_Recetas_Seleccionada').src;
+  
+  // Crear un objeto con la información de la receta
+  const recetaRealizada = {
+    nombre: nombreReceta,
+    descripcion: descripcionReceta,
+    imagen: imgSrcReceta
+  };
+  
+  // Obtener la lista de recetas realizadas desde localStorage
+  let recetasRealizadas = JSON.parse(localStorage.getItem('recetasRealizadas')) || [];
+  
+  // Agregar la nueva receta a la lista
+  recetasRealizadas.push(recetaRealizada);
+  
+  // Guardar la lista actualizada en localStorage
+  localStorage.setItem('recetasRealizadas', JSON.stringify(recetasRealizadas));
+  
+  // Opcional: Cerrar el modal después de guardar
+  cerrarModalRecetas();
 }

@@ -1,8 +1,8 @@
 const auth = firebase.auth();
 
-document.body.addEventListener('click', function(event) {
+document.body.addEventListener('click', function (event) {
   if (event.target && event.target.id === 'btn_modal_perfil') {
-      modalPerfil();
+    modalPerfil();
   }
 });
 
@@ -19,8 +19,23 @@ function modalPerfil() {
         modal.style.display = 'block';
 
         openTab(null, 'personalizar_Modal_Perfil');
-        document.querySelector(".tab-link[onclick*='personalizar_Modal_Perfil']").classList.add("active");
 
+        document.querySelector(".tab-link[onclick*='personalizar_Modal_Perfil']").classList.add("active");
+        // Verificar el valor de 'generar_Imagen' en localStorage
+        var generar_Imagen = localStorage.getItem('generar_Imagen') || "No";
+        var btn = document.getElementById("btn_GeneracionImagenes");
+
+        if (btn) {
+          if (generar_Imagen === "Si") {
+            btn.textContent = "Generar Imagenes: DESACTIVAR";
+            btn.style.backgroundColor = "rgb(203, 248, 209)";
+          } else {
+            btn.textContent = "Generar Imagenes: ACTIVAR";
+            btn.style.backgroundColor = "rgb(244, 244, 243)";
+          }
+        } else {
+          console.error('No se encontró el botón btn_GeneracionImagenes');
+        }
         addEventListeners();
       } else {
         console.error('No se encontró el elemento modal_Perfil');
@@ -78,22 +93,22 @@ function cambiarContrasena() {
   const contrasenaConfirmar = document.getElementById('contraseña_nueva_confirmar').value;
 
   if (contrasenaNueva !== contrasenaConfirmar) {
-      alert("Las contraseñas no coinciden");
-      return;
+    alert("Las contraseñas no coinciden");
+    return;
   }
 
   const user = auth.currentUser;
   const credenciales = firebase.auth.EmailAuthProvider.credential(user.email, contrasenaActual);
 
   user.reauthenticateWithCredential(credenciales).then(() => {
-      user.updatePassword(contrasenaNueva).then(() => {
-          alert("Contraseña actualizada con éxito");
-          cerrarModal();
-      }).catch((error) => {
-          alert("Error al actualizar la contraseña: " + error.message);
-      });
+    user.updatePassword(contrasenaNueva).then(() => {
+      alert("Contraseña actualizada con éxito");
+      cerrarModal();
+    }).catch((error) => {
+      alert("Error al actualizar la contraseña: " + error.message);
+    });
   }).catch((error) => {
-      alert("Error al reautenticar: " + error.message);
+    alert("Error al reautenticar: " + error.message);
   });
 }
 
@@ -102,16 +117,16 @@ function cambiarEmail() {
   const emailConfirmar = document.querySelector('#cambiar_email_Usuario_Perfil input[type="text"]:nth-child(4)').value;
 
   if (emailNuevo !== emailConfirmar) {
-      alert("Los emails no coinciden");
-      return;
+    alert("Los emails no coinciden");
+    return;
   }
 
   const user = auth.currentUser;
   user.updateEmail(emailNuevo).then(() => {
-      alert("Email actualizado con éxito");
-      cerrarModal();
+    alert("Email actualizado con éxito");
+    cerrarModal();
   }).catch((error) => {
-      alert("Error al actualizar el email: " + error.message);
+    alert("Error al actualizar el email: " + error.message);
   });
 }
 
@@ -120,12 +135,12 @@ function cambiarNombre() {
 
   const user = auth.currentUser;
   user.updateProfile({
-      displayName: nombreNuevo
+    displayName: nombreNuevo
   }).then(() => {
-      alert("Nombre actualizado con éxito");
-      cerrarModal();
+    alert("Nombre actualizado con éxito");
+    cerrarModal();
   }).catch((error) => {
-      alert("Error al actualizar el nombre: " + error.message);
+    alert("Error al actualizar el nombre: " + error.message);
   });
 }
 
@@ -133,7 +148,7 @@ function cerrarSesion() {
   auth.signOut().then(() => {
     alert("Has cerrado sesión correctamente");
     cerrarModal();
-    window.location.href = '/pages/login.html'; 
+    window.location.href = '/pages/login.html';
   }).catch((error) => {
     alert("Error al cerrar sesión: " + error.message);
   });
@@ -160,7 +175,7 @@ function activarGeneracionImagenes() {
   var btn = document.getElementById("btn_GeneracionImagenes");
   var generar_Imagen;
 
-  if (btn.textContent === "Generar Imagenes: SI") {
+  if (btn.textContent === "Generar Imagenes: ACTIVAR") {
     btn.textContent = "Generar Imagenes: DESACTIVAR";
     generar_Imagen = "Si";
     btn.style.backgroundColor = "rgb(203, 248, 209)";

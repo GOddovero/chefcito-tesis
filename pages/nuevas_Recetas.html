@@ -55,6 +55,9 @@
         <button class="btn_seleccionarReceta" id="btn_seleccionarReceta_3"
           onclick="seleccionarReceta('receta_3')">Seleccionar Receta</button>
       </div>
+      <div id="loadingIndicator" style="display: none;">
+        <p>Cargando...</p>
+      </div>
       <div class="tarjeta_NuevaReceta" id="tarjeta_NuevaReceta_4">
         <img src="/img/defecto_4.png" class="img_Recetas" id="img_Recetas_4">
         <p id="nombre_Receta_4">Pasta al Pesto</p>
@@ -84,7 +87,7 @@
           <div class="botones_modal">
             <button class="btn_fav" id="btn_fav_modal" onclick="añadirFavorito(receta_id)">Favorito</button>
             <button class="btn_modal_cancelar" id="btn_modal_cancelar" onclick="cerrarModalRecetas()">Cancelar</button>
-            <button class="btn_modal_realizar" id="btn_modal_realizar" onclick="recetaRealizada(receta_id)">Realizada</button>
+            <button class="btn_modal_realizar" id="btn_modal_realizar" onclick="marcarRecetaComoRealizada()">Realizada</button>
           </div>
         </div>
       </div>
