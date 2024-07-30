@@ -1,13 +1,5 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js';
 import { getFirestore, collection, getDocs, doc, deleteDoc, updateDoc, getDoc, addDoc } from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js';
-
-const firebaseConfig = {
-    apiKey: "tu_api_key",
-    authDomain: "chefcito-af900.firebaseapp.com",
-    projectId: "chefcito-af900",
-    storageBucket: "chefcito-af900.appspot.com",
-};
-
 // Manejador global de promesas rechazadas
 window.addEventListener('unhandledrejection', function (event) {
     event.preventDefault();

@@ -1,3 +1,4 @@
+// firebase-init.js
 const firebaseConfig = {
     apiKey: "AIzaSyD9AikH55edE0Vp7lBiau-q1XQgxLSZg2s",
     authDomain: "chefcito-af900.firebaseapp.com",

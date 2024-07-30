@@ -1,39 +1,52 @@
-let currentIndex = 0;
-
-document.querySelector('.prev-button').addEventListener('click', () => {
-   navigate(-1);
-});
-
-document.querySelector('.next-button').addEventListener('click', () => {
-   navigate(1);
-});
-
-function navigate(direction) {
-   const galleryContainer = document.querySelector('.imagenes_Ultimas_Recetas');
-   const totalImages = document.querySelectorAll('.gallery-item').length;
-
-   currentIndex = (currentIndex + direction + totalImages) % totalImages;
-   const offset = -currentIndex * 100;
-
-   galleryContainer.style.transform = `translateX(${offset}%)`;
-}
-
-let autoplayInterval = null;
-
-function startAutoplay(interval) {
-   stopAutoplay(); // Detiene cualquier autoplay anterior para evitar múltiples intervalos.
-   autoplayInterval = setInterval(() => {
-      navigate(1); // Navega a la siguiente imagen cada intervalo de tiempo.
-   }, interval);
-}
-
-function stopAutoplay() {
-   clearInterval(autoplayInterval);
-}
-
-// Iniciar autoplay con un intervalo de 3 segundos.
-startAutoplay(3000);
-
-document.querySelectorAll('.botones_UltimasRecetas').forEach(button => {
-    button.addEventListener('click', stopAutoplay);
-});
+document.addEventListener('DOMContentLoaded', function() {
+   const recetasRealizadas = JSON.parse(localStorage.getItem('recetasRealizadas')) || [];
+   const galleryContainer = document.getElementById('gallery-container');
+ 
+   // Limpiar el contenedor antes de agregar nuevas imágenes
+   galleryContainer.innerHTML = '';
+ 
+   // Crear y agregar los elementos de la galería dinámicamente
+   recetasRealizadas.forEach((receta, index) => {
+     const figure = document.createElement('figure');
+     figure.className = 'gallery-item';
+ 
+     const img = document.createElement('img');
+     img.src = receta.imagen;
+     img.alt = `Imagen ${index + 1}`;
+ 
+     const figcaption = document.createElement('figcaption');
+     figcaption.innerText = receta.nombre;
+ 
+     figure.appendChild(img);
+     figure.appendChild(figcaption);
+     galleryContainer.appendChild(figure);
+   });
+ 
+   // Opcional: Agregar funcionalidad a los botones de navegación
+   const prevButton = document.querySelector('.prev-button');
+   const nextButton = document.querySelector('.next-button');
+ 
+   let currentIndex = 0;
+   const itemsPerPage = 2; // Número de imágenes visibles por página
+ 
+   function updateGallery() {
+     const items = document.querySelectorAll('.gallery-item');
+     items.forEach((item, index) => {
+       item.style.display = (index >= currentIndex && index < currentIndex + itemsPerPage) ? 'block' : 'none';
+     });
+   }
+ 
+   prevButton.addEventListener('click', () => {
+     currentIndex = Math.max(0, currentIndex - itemsPerPage);
+     updateGallery();
+   });
+ 
+   nextButton.addEventListener('click', () => {
+     currentIndex = Math.min(recetasRealizadas.length - itemsPerPage, currentIndex + itemsPerPage);
+     updateGallery();
+   });
+ 
+   // Inicializar la galería
+   updateGallery();
+ });
+ 

@@ -1,3 +1,4 @@
+
 //Variables y Listas
 var ingrediente_Principal_Activo = "No";
 const listaIngredientes = JSON.parse(localStorage.getItem('listaIngredientes'));
@@ -313,16 +314,11 @@ function marcarRecetaComoRealizada() {
     descripcion: descripcionReceta,
     imagen: imgSrcReceta
   };
-  
-  // Obtener la lista de recetas realizadas desde localStorage
+
+  // Guardar en localStorage
   let recetasRealizadas = JSON.parse(localStorage.getItem('recetasRealizadas')) || [];
-  
-  // Agregar la nueva receta a la lista
   recetasRealizadas.push(recetaRealizada);
-  
-  // Guardar la lista actualizada en localStorage
   localStorage.setItem('recetasRealizadas', JSON.stringify(recetasRealizadas));
-  
-  // Opcional: Cerrar el modal después de guardar
-  cerrarModalRecetas();
+
+  console.log('Receta guardada en localStorage');
 }
