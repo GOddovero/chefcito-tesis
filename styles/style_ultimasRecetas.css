@@ -51,7 +51,7 @@
  
  .contenedor_RecetasFavoritas{
    display: grid;
-   grid-template-columns: repeat(4, auto);
+   grid-template-columns: repeat(3, auto);
    justify-content: center;
    height: 100%;
    width: 100%;
@@ -69,7 +69,7 @@
    margin-bottom: 0;
 }
 .tarjeta_RecetasFavoritas{
-   background-color: rgb(208,210,96);
+   background-color: rgb(244, 248, 44);
    padding: 1rem;
    display: flex;
    flex-direction: column;

@@ -207,14 +207,14 @@ select {
     width: 25vw;
     height: 80vh;
     background-color: rgb(25, 135, 84);
-    padding: 25px;
+ 
     color: aliceblue;
     overflow-x: hidden;
     border: none;
 }
 
 .nombre_Receta_Seleccionada {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     text-align: center;
     margin-bottom: 10px;
     margin-top: 20px;
@@ -226,9 +226,8 @@ select {
     text-align: center;
     margin-bottom: 10px;
     margin-top: 10px;
-    font-size: 1.5rem;
+    font-size: 1rem;
     overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 .contenido_modal_pasos {

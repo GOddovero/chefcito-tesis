@@ -36,7 +36,13 @@ function activarIngredientePrincipal() {
     button.style.backgroundColor = "rgb(244, 244, 243)";
   }
 }
+document.addEventListener('DOMContentLoaded', () => {
+  const botonGenerarRecetas = document.getElementById('btn_GenerarRecetas');
+  botonGenerarRecetas.addEventListener('click', () => {
 
+      generarRecetas();
+  });
+});
 
 var prompt_Chefcito = "";
 
@@ -80,8 +86,8 @@ async function generarRecetas() {
 
     const data = await response.json();
     const recetas = data.choices[0]?.message?.content || "";
-    const recetasArray = recetas.split('\n\n'); // Suponiendo que las recetas están separadas por dobles saltos de línea
-    console.log(recetas); // Verificar datos en la consola
+    const recetasArray = recetas.split('\n\n'); 
+    console.log(recetas); 
 
     const nombresRecetas = [];
     const descripcionesRecetas = [];
@@ -107,6 +113,7 @@ async function generarRecetas() {
         descripcionElement.textContent = descripcionesRecetas[i - 1];
       }
     }
+    
     let generar_Imagen = localStorage.getItem('generar_Imagen') || "No";
     if (generar_Imagen === "Si") {
       generarYActualizarImagenes(descripcionesRecetas);
@@ -194,12 +201,13 @@ async function generarRecetas() {
     try {
         await Promise.all(imagePromises);
         console.log("Todas las imágenes generadas y actualizadas correctamente.");
+        almacenarRecetas();
     } catch (error) {
         console.error('Error al generar imágenes:', error);
     }
 }
+almacenarRecetas();
 }
-window.generarRecetas = generarRecetas;
 window.onload = generarRecetas();
 
 function cerrarModalRecetas() {
@@ -301,24 +309,45 @@ async function seleccionarReceta(recetaId) {
     console.error('Receta no encontrada');
   }
 }
-
-function marcarRecetaComoRealizada() {
-  // Obtener los datos del modal
-  const nombreReceta = document.getElementById('nombre_Receta_Seleccionada').innerText;
-  const descripcionReceta = document.getElementById('descripcion_Receta_Seleccionada').innerText;
-  const imgSrcReceta = document.getElementById('img_Recetas_Seleccionada').src;
+function almacenarRecetas() {
+  // Selecciona todas las tarjetas de recetas
+  var tarjetas = document.querySelectorAll('.tarjeta_NuevaReceta');
   
-  // Crear un objeto con la información de la receta
-  const recetaRealizada = {
-    nombre: nombreReceta,
-    descripcion: descripcionReceta,
-    imagen: imgSrcReceta
-  };
+  // Array para almacenar las recetas
+  var recetas_recientes = [];
 
-  // Guardar en localStorage
-  let recetasRealizadas = JSON.parse(localStorage.getItem('recetasRealizadas')) || [];
-  recetasRealizadas.push(recetaRealizada);
-  localStorage.setItem('recetasRealizadas', JSON.stringify(recetasRealizadas));
+  // Recorre cada tarjeta de receta
+  for (var i = 0; i < tarjetas.length; i++) {
+      var tarjeta = tarjetas[i];
 
-  console.log('Receta guardada en localStorage');
+      // Obtiene el nombre, la descripción y la imagen
+      var nombre = tarjeta.querySelector('p').textContent;
+      var descripcion = tarjeta.querySelector('text').textContent;
+      var img = tarjeta.querySelector('img').src;
+
+      // Crea un objeto para la receta
+      var receta_guardar = {
+          nombre: nombre,
+          descripcion: descripcion,
+          img: img
+      };
+
+      // Agrega la receta al array
+      recetas_recientes.push(receta_guardar);
+  }
+
+  // Recupera las recetas existentes desde localStorage
+  var recetas_existentes = JSON.parse(localStorage.getItem('recetas_recientes')) || [];
+
+  // Añade las nuevas recetas a las recetas existentes
+  recetas_existentes = recetas_existentes.concat(recetas_recientes);
+
+  // Mantiene solo las últimas 9 recetas
+  if (recetas_existentes.length > 9) {
+      recetas_existentes = recetas_existentes.slice(-9);
+  }
+
+  // Guarda el array actualizado de recetas en localStorage
+  localStorage.setItem('recetas_recientes', JSON.stringify(recetas_existentes));
 }
+

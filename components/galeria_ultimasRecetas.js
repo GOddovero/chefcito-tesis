@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-   const recetasRealizadas = JSON.parse(localStorage.getItem('recetasRealizadas')) || [];
+   const recetasRealizadas = JSON.parse(localStorage.getItem('recetas_recientes')) || [];
    const galleryContainer = document.getElementById('gallery-container');
  
    // Limpiar el contenedor antes de agregar nuevas imágenes
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
      figure.className = 'gallery-item';
  
      const img = document.createElement('img');
-     img.src = receta.imagen;
+     img.src = receta.img;
      img.alt = `Imagen ${index + 1}`;
  
      const figcaption = document.createElement('figcaption');
