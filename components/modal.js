@@ -17,10 +17,7 @@ cerrar_modificar.onclick = function(){
     modal_Modificar.style.display = "none";
 }
 
-añadir.onclick = function() {
-    modal.style.display = "none";
-    console.log("Se añadio un nuevo ingrediente correctamente.")
-}
+
 
 // Cierra el modal cuando se hace clic fuera de él
 window.onclick = function(event) {

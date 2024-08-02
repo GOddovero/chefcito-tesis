@@ -63,16 +63,13 @@ th, td {
     text-align: center;
 }
 th {
-    position: sticky;
-    top: 0;
-    z-index: 10;
+
     background-color: aliceblue;
     border: 2px solid rgb(221, 230, 238);
     border-radius: 10% 10% 0 0;
+    
 
 }
-
-
 td {
     border-bottom: 3px solid rgb(221, 230, 238);
 }

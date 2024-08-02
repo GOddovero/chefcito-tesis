@@ -226,15 +226,16 @@ async function añadirIngrediente() {
             UNIDAD: unidad,
             FAVORITO: "false"  // Por defecto, el nuevo ingrediente no es favorito
         });
+        
         console.log("Documento añadido con ID: ", docRef.id);
 
         // Limpiar los campos del modal
         document.getElementById('NOMBRE_INGREDIENTE').value = '';
         document.getElementById('CANTIDAD_INGREDIENTE').value = '';
-        document.getElementById('UNIDAD_INGREDIENTE').value = '';
+        document.getElementById('UNIDAD_INGREDIENTE').value = 'Seleccione la Unidad';
 
         // Cerrar el modal (asumiendo que tienes una función para esto)
-        cerrarModal(document.getElementById("modal_AñadirIngrediente"));
+        cerrarModal(document.getElementById("modal_Ingredientes"));
 
         // Recargar la tabla
         obtenerDatosYRellenarTabla('ingredientes');
@@ -242,6 +243,7 @@ async function añadirIngrediente() {
         console.error("Error añadiendo documento: ", e);
     }
 }
+window.añadirIngrediente = añadirIngrediente;
 
 document.body.addEventListener('click', function(event) {
     if (event.target && event.target.id === 'bnt_modal_añadir') {
