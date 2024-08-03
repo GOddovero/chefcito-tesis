@@ -31,17 +31,22 @@
             <img src="../img/principal.jpeg" class="img_Titulos">
             <div class="contenedor_Titulos">
                 <h1>Chefcito</h1>
-                <h2>Tu Asistente AI para Generar Recetas</h2>
-                <p>¿Tenes alimentos en tu casa y no queres desperdiciar ninguno? <br>
-                    Con Chefcito, tu asistente AI, te permitirá optimizar todas tus comidas. </p>
-                <button class="btn_sinFondo"> Informacion</button> <button class="btn_Principal"> Generar
-                    Recetas</button>
+                <h2>Sistema generativo de recetas mediante Inteligencia Artificial</h2>
+            </div>
+        </div>
+        <div class="contenedor_info">
+            <p>¿Tenes alimentos en tu casa y no queres desperdiciar ninguno? <br>
+                Con Chefcito, tu asistente IA, te permitirá optimizar todas tus comidas. </p>
+            <div class="contenedor_botones">
+                <button class="btn_sinFondo"> Informacion</button>
+                <button class="iniciar" onclick="location.href='/pages/login.html'"> Iniciar Sesion</button>
             </div>
         </div>
         <div class="segundo_Bloque">
             <h2>Objetivos del Proyecto</h2>
             <p>
-                Obtener variedad de recetas adaptando las necesidades del usuario teniendo en cuenta el tipo de dieta seleccionada.
+                Obtener variedad de recetas adaptando las necesidades del usuario teniendo en cuenta el tipo de dieta
+                seleccionada.
 
             </p>
             <p>
@@ -52,7 +57,63 @@
             </p>
         </div>
         <div class="tercer_Bloque">
-            <p>Hola</p>
+            <h2>Resumen</h2>
+            <text>
+                En la actualidad, la obtención de recetas para la realización de alimentos quedó
+                considerablemente desactualizada en comparación a las tecnologías puntas del mercado,
+                haciendo evidente que la forma actual de obtener recetas es mediante libros o páginas
+                web.
+            </text>
+            <text>
+                Este escenario permitió conocer la necesidad de actualizar y mejorar el sistema
+                usando durante los últimos años, surgiendo así la opción de emplear la inteligencia
+                artificial para genera recetas en función de los ingredientes que tenemos en casa. El
+                objetivo consistió en desarrollar una aplicación web que cumpliera con los requerimientos
+                planteados.
+
+            </text>
+            <text>
+
+                El resultado fue la creación de un sistema que permite a los usuarios generar recetas adaptadas a sus
+                necesidades, gustos y recursos disponibles, además se incluyó la
+                opción de generar las mismas sin considerar las cantidades que poseen de cada ingrediente
+                para lograr un sistema más sólido, como también la opción de dietas para descartar
+                algunos alimentos a la hora de generarlas.
+            </text>
+            <text class="ultimo_text">
+
+                Este enfoque proporciona una solución
+                innovadora y personalizada para la obtención de recetas, aprovechando la inteligencia
+                artificial para mejorar la experiencia culinaria de los usuarios y a sus preferencias
+                personales.
+            </text>
+        </div>
+        <div class="cuarto_Bloque">
+            <h2>Informacion</h2>
+            <div class="tecnologias_usadas">
+                <h3>Tecnologias utilizadas</h3>
+                <div class="contenedor_tecnologias">
+                    <img src="../img/tec/html.png" class="img_tecnologias" >
+                    <img src="../img/tec/css.png" class="img_tecnologias">
+                    <img src="../img/tec/js.png" class="img_tecnologias">
+                    <img src="../img/tec/react.png" class="img_tecnologias">
+                    <img src="../img/tec/node.png" class="img_tecnologias">
+                    <img src="../img/tec/chatgpt.png" class="img_tecnologias">
+                    <img src="../img/tec/dall-e.png" class="img_tecnologias">
+                    <img src="../img/tec/groq.png" class="img_tecnologias">
+                    <img src="../img/tec/firebase.png" class="img_tecnologias">
+                </div>
+            </div>
+            <div class="prompt_utilizado">
+                <h3>Prompt para generar recetas</h3>
+                <text>
+                    I need you to generate three recipes based on the list of ingredients that I will provide at the end. It is not necessary to use all the ingredients, but in the recipes you generate, there cannot be more ingredients than those (except water, sugar, and salt). I need you to generate an OUTPUT IN SPANISH in the following format (as this will allow me to handle the output better), I am giving you an example to always follow: ‘nombre’: (insert the name of the recipe), ‘descripción’: (the description of the recipe, basically how it looks) and nothing else, without preparation, ONLY NAME AND DESCRIPTION, plain text in that format.Make sure the output is in plain text and strictly follows this format, with 'nombre' and 'descripción' clearly indicated as shown in the example. Here is the list of ingredients: Remember to include 'nombre' before the name of the recipe and 'descripción' before the description of the same. You want an output in Spanish with the following structure: 'nombre': [name of the recipe] 'descripción': [description of the recipe], Different from the previous ones . List of ingredients:
+                </text>
+                <h3>Prompt para generar imagenes</h3>
+                <text>
+                    Generate a realistic image of a white plate with highlighted ingredients. The composition should be simple and focus solely on the elements described in the following recipe. Do not add any additional elements to the image.
+                </text>
+            </div>
         </div>
     </div>
     <script src="/components/login.js"></script>

@@ -30,18 +30,15 @@ nav li:hover {
     height: 20%;
 }
 .contenedor_Titulos h1{
-    font-size: 150px;
+    font-size: 10vw;
     margin-bottom: 0;
     margin-top: 0;
 }
 .contenedor_Titulos h2{
-    font-size: 40px;
+    font-size: 4vh;
     margin-top: 0;
 }
-.contenedor_Titulos p{
-    font-size: 20px;
-    margin-top: 0;
-}
+
 .img_Titulos{
     width: 40%;
     height: 20%;
@@ -57,8 +54,26 @@ nav li:hover {
     width: 50%;
     font-size: 2rem;
 }
+.contenedor_info{
+    width: 50%;
+    height: 40%;
+    text-align: center;
+    margin-bottom: 0;
+    margin-top: 2%    
+}
+.contenedor_info p{
+    font-size: 20px;
+    margin-top: 0;
+}
+.contenedor_botones{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 2%;
+    gap: 10%
+}
 .segundo_Bloque{
-    margin-top: 10%;
+    margin-top: 2%;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -69,7 +84,7 @@ nav li:hover {
 }
 .segundo_Bloque h2{
     color:#146C43;
-    font-size: 40px;
+    font-size: 5vh;
 }
 .segundo_Bloque p{
     font-size: x-large;
@@ -85,6 +100,56 @@ nav li:hover {
     flex-direction: column;
     width: 100%;
     height: 50%;
-    text-align: center;
     background-color: #d1d1bc;
+    text-align: center;
+}
+.tercer_Bloque h2{
+    color:#146C43;
+    font-size: 5vh;
+}
+.tercer_Bloque text{
+    margin: auto;
+    text-align: center;
+    width: 48vw;
+    padding: 1%;
+    font-size: large;
+    color: #41413a;
+}
+.tercer_Bloque .ultimo_text{
+    margin-bottom: 5%;
+}
+
+.cuarto_Bloque{
+    background-color:#c5c5b1;
+    width: 100%;
+    height: 20%;
+    text-align: center;
+}
+.cuarto_Bloque h2{
+    color:#146C43;
+    font-size: 5vh;
+}
+.cuarto_Bloque h3{
+    color:#146C43;
+    font-size: 3.5vh;
+}
+.img_tecnologias{
+    width: 10vw;
+    height: 10vw;
+}
+.prompt_utilizado{
+    margin-top: 2%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 60%;
+    text-align: center;
+}
+.prompt_utilizado text{
+    margin: auto;
+    text-align: center;
+    width: 60vw;
+    padding: 1%;
+    font-size: medium;
+    color: #41413a;
 }
