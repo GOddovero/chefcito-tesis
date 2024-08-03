@@ -11,32 +11,42 @@
 </head>
 
 <body>
-    <div class="contenedor_PrincipalLogin">
-        <div class="fondo_movil"></div>
-        <div class="contenedor_Login">
-            <h2>Inicia Sesion</h2>
-            <div class="input_Login">
-                <text>Email</text>
-                <input type="text" placeholder="Usuario o Email">
-                <text>Contraseña</text>
-                <input type="password" placeholder="Contraseña">
-                <text id="error_mensaje"></text>
-            </div>
-            
-            <button class="btn_IngresarSesion">Ingresar</button>
-            <button class="btn_HabilitarRegistrar" id="btn_sinFondo">¿No tienes cuenta? Registrate</button>
+    <nav class="nav_Index" id="navbar">
+        <div class="contenedor_navbar_1">
+            <a class="a_navbar" href="/pages/index.html">
+                <p id="texto_navbar">Chefcito</p>
+            </a>
         </div>
-        <div class="contenedor_Registrar">
-            <h2>Registrate</h2>
-            <div class="input_Registrar">
-                <input type="text" placeholder="Nombre">
-                <input type="text" placeholder="Apellido">
-                <input type="text" placeholder="Usuario">
-                <input type="text" placeholder="Email">
-                <input type="password" placeholder="Contraseña">
+    </nav>
+    <div class="contenedor_Principal">
+
+        <div class="contenedor_PrincipalLogin">
+            <div class="fondo_movil"></div>
+            <div class="contenedor_Login">
+                <h2>Inicia Sesion</h2>
+                <div class="input_Login">
+                    <text>Email</text>
+                    <input type="text" placeholder="Usuario o Email">
+                    <text>Contraseña</text>
+                    <input type="password" placeholder="Contraseña">
+                    <text id="error_mensaje"></text>
+                </div>
+                
+                <button class="btn_IngresarSesion">Ingresar</button>
+                <button class="btn_HabilitarRegistrar" id="btn_sinFondo">¿No tienes cuenta? Registrate</button>
             </div>
-            <button class="btn_Registrar">Registrar</button>
-            <button class="btn_HabilitarLogin" id="btn_sinFondo">¿Ya tienes cuenta? Inicia Sesion</button>
+            <div class="contenedor_Registrar">
+                <h2>Registrate</h2>
+                <div class="input_Registrar">
+                    <input type="text" placeholder="Nombre">
+                    <input type="text" placeholder="Apellido">
+                    <input type="text" placeholder="Usuario">
+                    <input type="text" placeholder="Email">
+                    <input type="password" placeholder="Contraseña">
+                </div>
+                <button class="btn_Registrar">Registrar</button>
+                <button class="btn_HabilitarLogin" id="btn_sinFondo">¿Ya tienes cuenta? Inicia Sesion</button>
+            </div>
         </div>
     </div>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>

@@ -94,6 +94,10 @@ nav li:hover {
 .segundo_Bloque .ultimo_P{
     margin-bottom: 5%;
 }
+.segundo_Bloque .p_principal{
+    font-size: 5vh;
+    color: #146C43;
+}
 .tercer_Bloque{
     margin-top: 0;
     display: flex;
@@ -137,6 +141,9 @@ nav li:hover {
     width: 10vw;
     height: 10vw;
 }
+.cuarto_Bloque .ultimo_text{
+    margin-bottom: 5%;
+}
 .prompt_utilizado{
     margin-top: 2%;
     display: flex;
@@ -152,4 +159,28 @@ nav li:hover {
     padding: 1%;
     font-size: medium;
     color: #41413a;
+}
+.quinto_Bloque{
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    background-color: #d1d1bc;
+    text-align: center;
+}
+.quinto_Bloque h2{
+    color:#146C43;
+    font-size: 5vh;
+}
+.quinto_Bloque text{
+    margin: auto;
+    text-align: center;
+    width: 50vw;
+    padding: 1%;
+    font-size: large;
+    color: #41413a;
+}
+.quinto_Bloque .ultimo_text{
+    margin-bottom: 5%;
 }

@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <nav class="nav_Index">
+    <nav class="nav_Index" id="navbar">
         <div class="contenedor_navbar_1">
             <a class="a_navbar" href="/pages/index.html">
                 <p id="texto_navbar">Chefcito</p>
@@ -19,7 +19,7 @@
         <ul class="contenedor_navbar_2">
             <li>
             <li>
-                <a class="a_navbar" href="/pages/login.html">
+                <a class="a_navbar" href="/pages/login.html" id="login-link">
                     <p id="texto_navbar">Iniciar Sesion</p>
                 </a>
             </li>
@@ -39,21 +39,27 @@
                 Con Chefcito, tu asistente IA, te permitirá optimizar todas tus comidas. </p>
             <div class="contenedor_botones">
                 <button class="btn_sinFondo"> Informacion</button>
-                <button class="iniciar" onclick="location.href='/pages/login.html'"> Iniciar Sesion</button>
+                <button class="iniciar" onclick="location.href='/pages/nuevas_Recetas.html'"> Generar Recetas</button>
             </div>
         </div>
         <div class="segundo_Bloque">
             <h2>Objetivos del Proyecto</h2>
-            <p>
-                Obtener variedad de recetas adaptando las necesidades del usuario teniendo en cuenta el tipo de dieta
-                seleccionada.
+            <p class="p_principal">
+                Diseñar y desarrollar un entorno Web donde el usuario pueda generar de manera
+                automática recetas mediante el uso indirecto de la inteligencia artificial.
 
             </p>
             <p>
-                Generar diferentes recetas a partir de los ingredientes que posee el usuario.
+                Implementar un sistema web que permita a los usuarios introducir sus
+                ingredientes y preferencias dietéticas, y utilizar algoritmos de inteligencia
+                artificial para generar recetas personalizadas que se ajusten a las
+                necesidades del usuario.
             </p>
             <p class="ultimo_P">
-                Implementar un sistema de clasificación de recetas según su nivel de complejidad.
+                Desarrollar un algoritmo de inteligencia artificial capaz de analizar los
+                ingredientes proporcionados por el usuario, identificar patrones y
+                preferencias, y generar recomendaciones de recetas adecuadas en función
+                a estos ingredientes y a las preferencias de cocina del usuario.
             </p>
         </div>
         <div class="tercer_Bloque">
@@ -93,30 +99,92 @@
             <div class="tecnologias_usadas">
                 <h3>Tecnologias utilizadas</h3>
                 <div class="contenedor_tecnologias">
-                    <img src="../img/tec/html.png" class="img_tecnologias" >
+                    <img src="../img/tec/html.png" class="img_tecnologias">
                     <img src="../img/tec/css.png" class="img_tecnologias">
                     <img src="../img/tec/js.png" class="img_tecnologias">
                     <img src="../img/tec/react.png" class="img_tecnologias">
                     <img src="../img/tec/node.png" class="img_tecnologias">
+                    <img src="../img/tec/firebase.png" class="img_tecnologias">
                     <img src="../img/tec/chatgpt.png" class="img_tecnologias">
                     <img src="../img/tec/dall-e.png" class="img_tecnologias">
                     <img src="../img/tec/groq.png" class="img_tecnologias">
-                    <img src="../img/tec/firebase.png" class="img_tecnologias">
                 </div>
             </div>
             <div class="prompt_utilizado">
                 <h3>Prompt para generar recetas</h3>
                 <text>
-                    I need you to generate three recipes based on the list of ingredients that I will provide at the end. It is not necessary to use all the ingredients, but in the recipes you generate, there cannot be more ingredients than those (except water, sugar, and salt). I need you to generate an OUTPUT IN SPANISH in the following format (as this will allow me to handle the output better), I am giving you an example to always follow: ‘nombre’: (insert the name of the recipe), ‘descripción’: (the description of the recipe, basically how it looks) and nothing else, without preparation, ONLY NAME AND DESCRIPTION, plain text in that format.Make sure the output is in plain text and strictly follows this format, with 'nombre' and 'descripción' clearly indicated as shown in the example. Here is the list of ingredients: Remember to include 'nombre' before the name of the recipe and 'descripción' before the description of the same. You want an output in Spanish with the following structure: 'nombre': [name of the recipe] 'descripción': [description of the recipe], Different from the previous ones . List of ingredients:
+                    I need you to generate three recipes based on the list of ingredients that I will provide at the
+                    end. It is not necessary to use all the ingredients, but in the recipes you generate, there cannot
+                    be more ingredients than those (except water, sugar, and salt). I need you to generate an OUTPUT IN
+                    SPANISH in the following format (as this will allow me to handle the output better), I am giving you
+                    an example to always follow: ‘nombre’: (insert the name of the recipe), ‘descripción’: (the
+                    description of the recipe, basically how it looks) and nothing else, without preparation, ONLY NAME
+                    AND DESCRIPTION, plain text in that format.Make sure the output is in plain text and strictly
+                    follows this format, with 'nombre' and 'descripción' clearly indicated as shown in the example. Here
+                    is the list of ingredients: Remember to include 'nombre' before the name of the recipe and
+                    'descripción' before the description of the same. You want an output in Spanish with the following
+                    structure: 'nombre': [name of the recipe] 'descripción': [description of the recipe], Different from
+                    the previous ones . List of ingredients:
                 </text>
                 <h3>Prompt para generar imagenes</h3>
-                <text>
-                    Generate a realistic image of a white plate with highlighted ingredients. The composition should be simple and focus solely on the elements described in the following recipe. Do not add any additional elements to the image.
+                <text class="ultimo_text">
+                    Generate a realistic image of a white plate with highlighted ingredients. The composition should be
+                    simple and focus solely on the elements described in the following recipe. Do not add any additional
+                    elements to the image.
                 </text>
             </div>
         </div>
     </div>
-    <script src="/components/login.js"></script>
+    <div class="quinto_Bloque">
+        <h2>Conclusiones</h2>
+        <text>
+            En el transcurso de este proyecto, se ha desarrollado una aplicación web con el
+            objetivo principal de ampliar las opciones gastronómicas de los usuarios, facilitándoles
+            la exploración de nuevos platos utilizando ingredientes de sus hogares. La motivación
+            detrás de esta iniciativa fue el deseo de descubrir nuevas recetas y modernizar una tarea
+            que llevaba muchos años atrasada, con eso aprovechar una tecnología innovadora como
+            es el caso de ChatGPT.
+        </text><br>
+
+        <text>
+            Los objetivos planteados inicialmente fueron alcanzados con éxito. El sistema
+            desarrollado permite a los usuarios relacionar los ingredientes que poseen con recetas
+            obtenidas a través del uso de ChatGPT. Esto se logra al consultarle mediante un prompt
+            desarrollado para la ocasión, mostrándole al usuario solamente la cantidad necesaria de
+            cada ingrediente, como también los pasos detallados para la preparación de cada plato.
+            Además, la aplicación ofrece diversas opciones para aceptar las recetas a diferentes tipos
+            de dietas, lo que garantiza su accesibilidad e inclusión para todos los usuarios.
+        </text><br>
+        <text>
+            Durante el desarrollo del proyecto, parte integral de mi culminación en la carrera
+            de Licenciatura en Informática, pude aplicar y consolidar numerosos conocimientos
+            adquiridos a lo largo de mi formación. También tuve la oportunidad de enfrentarme a
+            desafíos que me permitieron explorar nuevas prácticas, como la implementación de
+            funciones de favoritos y modo incógnito.
+        </text><br>
+        <text>
+            Este proceso fue gratificante a nivel personal, ya que me brindo la oportunidad de
+            reflexionar sobre las practicas aprendidas durante mis cinco años de formación
+            académica, considerando que este proyecto marca el inicio de una carrera profesional en
+            el mundo de la tecnología de la información. La experiencia adquirida no solo me
+            enriqueció a nivel de conocimiento personal, sino que también fortaleció mis habilidades
+            profesionales, preparándome de esta forma para futuros desafíos en esta área.
+        </text>
+    </div>
+    <!--Auth en firebase-->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth-compat.js"></script>
+    <script src="/components/firebase-init.js"></script>
+    <script>
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // Usuario autenticado, cambiar el texto del enlace
+                const loginLink = document.getElementById('login-link');
+                loginLink.href = "/pages/nuevas_Recetas.html";
+                loginLink.querySelector('#texto_navbar').textContent = 'Generar Receta';
+            }
+        });
+    </script>
 </body>
 
 </html>
