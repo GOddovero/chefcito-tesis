@@ -127,7 +127,7 @@ async function generarRecetas() {
   async function generarYActualizarImagenes(descripcionesRecetas) {
     var prompt_por_defecto = "Generate a realistic image of a white plate with highlighted ingredients. The composition should be simple and focus solely on the elements described in the following recipe. Do not add any additional elements to the image:";
     
-    var OPENAI_API_KEY = "sk-proj-tKXaXeCaedNutsgbJa2iT3BlbkFJzE8nvjJJLGNQjR64UrfC";
+    var OPENAI_API_KEY = "";
 
     async function generateAiImages(userPrompt) {
         try {
