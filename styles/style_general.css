@@ -203,3 +203,8 @@ button:hover {
     justify-content: center;
     gap: 10px;
 }
+.footer_Modal_Perfil {
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}

@@ -325,6 +325,12 @@ function almacenarRecetas() {
       var descripcion = tarjeta.querySelector('text').textContent;
       var img = tarjeta.querySelector('img').src;
 
+      // Verificar si la imagen es loading.gif y cambiarla por una imagen por defecto aleatoria
+      if (img === 'http://localhost:3000/img/loading.gif') {
+          var randomImgIndex = Math.floor(Math.random() * 3) + 2; // Genera un número aleatorio entre 2 y 4
+          img = `http://localhost:3000/img/defecto_${randomImgIndex}.png`;
+      };
+
       // Crea un objeto para la receta
       var receta_guardar = {
           nombre: nombre,
@@ -351,3 +357,36 @@ function almacenarRecetas() {
   localStorage.setItem('recetas_recientes', JSON.stringify(recetas_existentes));
 }
 
+
+function añadirFavorito() {
+  // Obtener los datos de la receta seleccionada
+  const nombre = document.getElementById('nombre_Receta_Seleccionada').innerText;
+  const descripcion = document.getElementById('descripcion_Receta_Seleccionada').innerText;
+  const imgSrc = document.getElementById('img_Recetas_Seleccionada').src;
+  const pasos = document.getElementById('pasos_Receta_Seleccionada').innerHTML;
+
+  // Crear un objeto con la información de la receta
+  const receta = {
+    nombre: nombre,
+    descripcion: descripcion,
+    imgSrc: imgSrc,
+    pasos: pasos
+  };
+
+  // Obtener las recetas guardadas en localStorage
+  let recetasFavoritas = JSON.parse(localStorage.getItem('recetasFavoritas')) || [];
+
+  // Añadir la nueva receta al principio de la lista
+  recetasFavoritas.unshift(receta);
+
+  // Limitar el almacenamiento a 12 recetas
+  if (recetasFavoritas.length > 12) {
+    recetasFavoritas.pop();
+  }
+
+  // Guardar las recetas actualizadas en localStorage
+  localStorage.setItem('recetasFavoritas', JSON.stringify(recetasFavoritas));
+
+  // Confirmar al usuario que la receta se ha añadido a favoritos
+  alert('¡Receta añadida a favoritos!');
+}

@@ -11,7 +11,8 @@
    margin: auto;
    overflow: hidden;
    align-items: center;
-   padding: 40px;
+   padding-top: 5%;
+   padding-right: 3%;
    background-color: bisque;
    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
    border-radius: 8px;
@@ -25,6 +26,7 @@
  
  .gallery-item {
    min-width: 50%;
+   max-height: 35vh;
    box-sizing: border-box;
    text-align: center;
    margin-top: auto;
@@ -33,18 +35,19 @@
  }
  
  .gallery-item img {
-   width: 25rem;
-   height: 15rem;
+   width: 20rem;
+   height: 15rem; 
    object-fit: cover;
+
  
  }
  
 
  .botones_UltimasRecetas {
-   margin-top: 20px; 
+   margin-top: 50px; 
    display: flex;
    justify-content: center;
-   margin-bottom: 5px;
+
  }
 
 
@@ -68,6 +71,7 @@
    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
    margin-bottom: 0;
 }
+
 .tarjeta_RecetasFavoritas{
    background-color: rgb(244, 248, 44);
    padding: 1rem;
@@ -89,4 +93,104 @@ text {
    min-height: 4.5em;
    max-height: 4.5em;  
    overflow: hidden;   
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+}
+
+.contenido_modal {
+  background-color: #f5f5dc;
+  border-radius: 5px;
+  width: 80vw;
+  height: 80vh;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.55);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contenido_modal_Receta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 0px;
+}
+
+.img_boton_favorita {
+  width: 20px;
+  height: 20px;
+}
+
+.btn_fav {
+  background-color: rgb(255, 255, 139);
+  padding: 10px;
+}
+
+.informacion_receta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 25vw;
+  height: 80vh;
+  background-color: rgb(25, 135, 84);
+
+  color: aliceblue;
+  overflow-x: hidden;
+  border: none;
+}
+
+.nombre_Receta_Seleccionada {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  word-break: break-word;
+  white-space: normal;
+  }
+
+.descripcion_Receta_Seleccionada {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 1rem;
+  overflow: hidden;
+}
+
+.contenido_modal_pasos {
+  width: 55vw;
+  height: 80vh;
+  overflow-y: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.pasos_Receta_Seleccionada {
+  padding: 2%;
+  flex-grow: 1;
+  overflow-y: scroll;
+  font-size: 1.5rem;
+}
+
+.botones_modal {
+  background-color: rgb(25, 135, 84);
+  padding: 2%;
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+  border: none;
+
+}
+.titulo_modal_Receta_Seleccionada{
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 15%;
+  margin-top: 15%;
 }
