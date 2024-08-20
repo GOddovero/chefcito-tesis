@@ -1,2 +1,1 @@
-Fast Image generator API: 39b3caf8-c7d2-4916-a469-1ee027e483f9:2a30b3810f4845b635493247b8887fef
-OPEN-AI Image: sk-proj-tKXaXeCaedNutsgbJa2iT3BlbkFJzE8nvjJJLGNQjR64UrfC
+
