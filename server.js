@@ -6,7 +6,7 @@ const Groq = require("groq-sdk");
 const app = express();
 const PORT = 3000;
 const API_PORT = 8000;
-const API_KEY = "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";
+const API_KEY = "";
 
 const groq = new Groq({
   apiKey: API_KEY
